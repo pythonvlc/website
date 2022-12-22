@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+        <meta charset="utf-8">
+        <title>Inicio</title>
+        <!--<link rel="icon" type="image/png" href="../favicon.png">
+        <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/../img/apple-touch-icon/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/../img/apple-touch-icon/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="/static/../img/apple-touch-icon/touch-icon-ipad-retina.png">-->
+        <meta name="theme-color" content="#3c790a">
+        <meta name="theme-color" 
+                content="#ecd96f" 
+                media="(prefers-color-scheme: light)">
+        <meta name="theme-color" 
+                content="#0b3e05" 
+                media="(prefers-color-scheme: dark)">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta name="author" content="Tu nombre">
+        <meta name="generator" content="Clojure">
+        <meta name="keywords" content="html, css, javascript">
+        <meta name="description" content="my description...">
+        <!--<meta property="og:image" content="../img/screenshot.png">-->
+        <meta property="og:title" content="The Rock">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@cuenta">
+        <meta name="twitter:creator" content="@cuenta">
+        <meta property="og:image:secure_url" content="https://...">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" type="text/css" media="all and (min-width: 901px)" href="assets/sass/desktop.sass">
+        <link rel="stylesheet" type="text/css" media="all and (max-width: 900px)" href="assets/sass/mobile.sass">
+        <!-- AlpineJS para gestionar el evento Clic -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>	
+	<body>
+        <!-- <header x-data="{ open: false }" class="header"  :class="open ? 'header--remove-blur' : ''"> -->
+        <header x-data="{ open: false }" class="header"  :class="open ? 'header--remove-blur' : ''">
+            <div class="container">
+                <div class="menu__mobile">
+                    <!-- Boton abrir -->
+                    <button class="header__button-nav--open" x-on:click="open = true"><img src="assets/img/icons/burger.png" alt="menu hamburguesa" class="menu__button"></button>
+                    <!-- Botón contacto -->
+                    <button class="contact__button">Contacto</button>
+                </div>
+                <!-- Navegador -->
+                <nav class="nav__container nav" x-bind:class="open ? 'nav--show' : ''">
+                    <!-- Boton cerrar -->
+                    <div class="nav__button-left" x-on:click="open = false">
+                        <button class="header__button-nav--close"><img src="assets/img/icons/close.png" alt="botón cerrar" class="button__nav--close-img"></button>
+                    </div>
+                    <!-- Logo python menu -->
+                    <div class="nav__button">
+                        <a href="#inicio"><img src="assets/img/python-valencia.png" alt="botón inicio" class="logo__home"></a>
+                    </div>
+                    <!-- Menu -->
+                    <ul class="nav__ul">
+                        <li class="nav__item-contact">
+                            <a href="#contacto" class="nav__link-contact">Contacto</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#preguntas-frecuentes" class="nav__link">Preguntas frecuentes</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#quienes-somos" class="nav__link">Quiénes somos</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#proximos-eventos" class="nav__link">Eventos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <!-- Hero -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__group">
+                        <img src="assets/img/python-valencia.png" alt="python-valencia" class="logo">
+                        <h1 id="inicio" class="hero__title">Python ! <br> Valencia</h1>
+                        <p class="hero__description">La comunidad de Python Valencia es un grupo de entusiastas que se dedican a compartir sus conocimientos sobre Python</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Próximos eventos -->
+            <section class="events">
+                <div class="container">
+                    <div class="events__all">
+                        <div class="events__info">
+                            <h2 class="events__title" id="proximos-eventos">Próximo evento</h2>
+                            <h3 class="events__subtitle">Testing en Python, de 0 a 100</h3>
+                            <p class="events__description">¿Necesitan tests tus proyectos? ¿Qué es un buen test? ¿De qué herramientas disponemos en Python para testing? ¿Qué trucos tienen esas herramientas? En esta charla mostraremos tanto los conceptos generales del testing como experiencias prácticas con técnicas más avanzadas.</p>
+                            <div class="events__labels">
+                                <time datetime="2022-11-14" class="label">17 NOV</time>
+                                <time class="label">19:00h</time>
+                                <div class="label">Idecrea - Carrer dels Centellés</div>
+                            </div>
+                        </div>
+                        <div class="events__photo">
+                            <div class="events__photo-label">Charla</div>
+                            <img src="assets/img/proximo-event.jpg" alt="comunidad Python Valencia" class="events__img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Comunidad -->
+            <section class="community">
+                <div class="container">
+                    <div class="community__all">
+                        <div class="community__photo">
+                            <img src="assets/img/foto-comunidad.jpg" alt="miembros de la comunidad Python Valencia" class="community__photo-members">
+                        </div>
+                        <div class="community__texts">
+                            <h3 id="quienes-somos">Quiénes somos</h3>
+                            <h2 class="community__texts-title">La comunidad de Python Valencia</h2>
+                            <p class="community__texts-description">Es un grupo de enamorados de la programación, buenas prácticas y arquitecturas que se dedican a compartir sus conocimientos sobre el lenguaje de la pitón que más nos gusta.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="python__definition">
+                <!--¿Conoces Python?-->
+                <div class="container">
+                    <div class="python__definition-all">
+                        <h2 class="python__title">¿Conoces Python?</h2>
+                        <p class="python__large-text">Por si aún no lo conoces, Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje de programación <span class="featured">multiparadigma,
+                        </span> ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje dinámico y forzado a tipos débiles.</p>
+                    </div>
+                </div>
+            </section>
+                <!-- Ventajas de pertenecer a la comunidad -->
+            <section class="pros">
+                <div class="container">
+                    <div class="pros__all">
+                        <div class="pros__texts">
+                            <div>
+                                <h2>Ventajas de pertenecer a la comunidad</h2>
+                                <p>Al estar en contacto directo con otros miembros de la comunidad, se pueden obtener numerosas ventajas.</p>
+                            </div>
+                            <div class="pros__block">
+                                <div class="pros__block-inside">
+                                    <p class="big-number">1_</p>
+                                    <p>Se puede aprender mucho sobre el lenguaje y cómo aplicarlo a diversos proyectos.</p>
+                                </div>
+                                <div class="pros__block-inside">
+                                    <p class="big-number">2_</p>
+                                    <p>También te ayudará a conocer las últimas tendencias en el desarrollo de Python.</p>
+                                </div>
+                                <div class="pros__block-inside">
+                                    <p class="big-number">3_</p>
+                                    <p>Estar al tanto de los últimos lanzamientos de la plataforma.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pros__img-group">
+                            <img src="assets/img/ventajas.jpg" alt="comunidad Python Valencia" class="pros__img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Preguntas frecuentes -->
+            <section class="section__questions">
+                <div class="container">
+                    <div class="section__questions-all">
+                        <div class="questions__title">
+                            <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+                        </div>
+                        <div class="questions__all">
+                            <details class="dropdown-border">
+                                <summary class="question-decoration">
+                                    <p class="question">¿Debo pagar una cuota?</p>
+                                    <p>
+                                        <img src="assets/img/icons/add.png" alt="icono" class="icon__open">
+                                    </p>
+                                </summary>
+                                <ul>
+                                    <li class="answer">No es necesario, con tu asistencia y ganas de colaborar ya estás aportando mucho.</li>
+                                </ul>
+                            </details>
+                            <details class="dropdown-border">
+                                <summary class="question-decoration">
+                                    <p class="question">¿Cómo puedo participar?</p>
+                                    <p>
+                                        <img src="assets/img/icons/add.png" alt="icono" class="icon__open">
+                                    </p>
+                                </summary>
+                                <ul>
+                                    <li class="answer">Asistiendo a las charlas o proponiendo una ponencia. Estaremos encantados de escucharte, sea de Python u otra tecnología igual de alucinante.</li>
+                                </ul>
+                            </details>
+                            <details class="dropdown-border">
+                                <summary class="question-decoration">
+                                    <p class="question">¿El proyecto tiene algún costo?</p>
+                                    <p>
+                                        <img src="assets/img/icons/add.png" alt="icono" class="icon__open">
+                                    </p>
+                                </summary>
+                                <ul>
+                                    <li class="answer">No, como el buen software.</li>
+                                </ul>
+                            </details>
+                            <details class="dropdown-border">
+                                <summary class="question-decoration">
+                                    <p class="question">¿Estáis abiertos a nuevos colaboradores?</p>
+                                    <p>
+                                        <img src="assets/img/icons/add.png" alt="icono" class="icon__open">
+                                    </p>
+                                </summary>
+                                <ul>
+                                    <li class="answer">Cuantas más manos, más grande serán nuestros logros. Te asignaremos un grupo de trabajo que más se ajuste a tus habilidades.</li>
+                                </ul>
+                            </details>
+                            <details class="dropdown-border--last">
+                                <summary class="question-decoration">
+                                    <p class="question">¿Cómo puedo ponerme en contacto?</p>
+                                    <p>
+                                        <img src="assets/img/icons/add.png" alt="icono" class="icon__open">
+                                    </p>
+                                </summary>
+                                <ul>
+                                    <li class="answer">En cualquiera de nuestras redes sociales.</li>
+                                </ul>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Newsletter -->
+            <section class="newsletter">
+                <div class="container">
+                    <h2 class="newsletter">
+                        Newsletter
+                    </h2>
+                </div>
+            </section> 
+            <!-- Redes sociales-->
+            <div class="container__loop">
+                <div class="scroll-wrapper">
+                    <p id="contacto" class="loop">Contacta con nosotros.</p>
+                    <p class="loop">Contacta con nosotros.</p>
+                </div>
+            </div>
+            <section>
+                <div>
+                    <div class="social-media">
+                        <div class="border">
+                            <a href="https://t.me/python_vlc" target="_blank" class="social-media__link">
+                                <img src="assets/img/icons/telegram.png" alt="icono Telegram" class="icon__social-media">
+                                <p class="social-media__link-text">Telegram</p>
+                                <img src="assets/img/icons/right-arrow.png" alt="icono flecha" class="icon__arrow">
+                            </a>
+                        </div>
+                        <div class="border">
+                            <a href="https://twitter.com/python_vlc" target="_blank" class="social-media__link">
+                                <img src="assets/img/icons/twitter.png" alt="icono Telegram" class="icon__social-media">
+                                <p class="social-media__link-text">Twitter</p>
+                                <img src="assets/img/icons/right-arrow.png" alt="icono flecha" class="icon__arrow">
+                            </a>
+                        </div>
+                        <div class="border-last">
+                            <a href="http://vlctechhub.slack.com" target="_blank" class="social-media__link">
+                                <img src="assets/img/icons/slack.png" alt="icono Telegram" class="icon__social-media">
+                                <p class="social-media__link-text">Slack</p>
+                                <img src="assets/img/icons/right-arrow.png" alt="icono flecha" class="icon__arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mail">
+                        <img src="assets/img/mail.webp" alt="mail python Valencia" class="mail__img">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section class="footer">
+                <div class="container">
+                    <div>
+                        <img src="assets/img/python-valencia.png" alt="logo python" class="footer__logo">
+                    </div>
+                    <div class="footer__links">
+                        <div class="footer__title">
+                            <p>Python Valencia</p>
+                        </div>
+                        <div class="footer__pages">
+                            <a href="#" class="footer__link">Política de cookies</a>
+                            <a href="#" class="footer__link">Política de privacidad</a>
+                            <a href="#" class="footer__link">Aviso legal</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__line"></div>
+                <div class="container">
+                    <div class="footer__copyright">
+                        <p class="footer__copyright-text">© 2022  Todos los derechos reservados</p>
+                        <p class="footer__copyright-text">Desarrollado por CCSTech.io - Alojado por CCSolutions.io</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+	</body>	
+</html>

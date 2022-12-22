@@ -1,0 +1,13 @@
+{
+  "name": "python-valencia",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "@parcel/transformer-sass": "^2.8.2"
+  }
+}
