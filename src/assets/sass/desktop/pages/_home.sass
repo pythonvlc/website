@@ -1,0 +1,269 @@
+
+// Próximos eventos
+
+.label 
+    background-color: $color--white
+    padding: .75rem 1.1rem
+    text-transform: capitalize
+
+
+.events 
+    margin-top: 15rem
+    margin-bottom: 7.5rem
+    &__all
+        display: grid
+        grid-template-columns: 1.3fr .7fr
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__info 
+        background-color: $color--orange
+        padding: 3rem
+    &__labels 
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+        margin-top: 1.25rem
+        width: 27rem
+    &__photo 
+        position: relative
+        &-label 
+            background-color: $color--black
+            color: $color--white
+            padding: .75rem 1.1rem
+            position: absolute //contenedor padre necesita position relative//
+            right: 0
+    &__description 
+        width: 60%
+    &__title
+        margin-bottom: 1.5rem
+    &__subtitle 
+        margin-bottom: 1.1rem
+
+
+
+// Comunidad
+
+.ventajas 
+    background-color: $color--white
+    padding: 5rem
+
+.community
+    padding-top: 7.5rem
+    padding-bottom: 7.5rem
+    &__all
+        display: grid
+        gap: 8.5rem
+        grid-template-columns: 1fr 1fr
+    
+    @media screen and (min-width: 901px) and (max-width: 1190px)
+        grid-template-columns: 1fr
+        gap: 4rem
+        
+    @media screen and (min-width: 1191px) and (max-width: 1360px)
+        gap: 4rem
+        grid-template-columns: .9fr 1.1fr
+    
+    &__texts
+        display: flex
+        flex-direction: column
+        justify-content: center
+        width: 30.25rem
+        &-title
+            margin-bottom: 1.5rem
+    &__photo
+        &-members
+            object-fit: cover
+
+
+// ¿Conoces Python?
+
+.python
+    &__title
+        margin-bottom: 4rem
+        text-align: center
+    &__definition
+        padding: 7.5rem 13rem
+        @media screen and (min-width: 901px) and (max-width: 1380px)
+            padding: 6rem 8rem
+        &-all
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+    &__large-text
+        color: $color--grey-text
+        font-size: 2rem
+        line-height: 1.3
+        text-align: center
+        padding: 0 5rem
+
+        @media screen and (min-width: 901px) and (max-width: 1380px)
+            font-size: 1.5rem
+
+.featured
+    color: $color--orange
+
+// Ventajas de pertenecer a la comunidad
+
+.pros
+    margin-top: 7.5rem
+    background-color: $color--grey
+    padding: 8rem 5rem
+
+    @media screen and (min-width: 901px) and (max-width: 1380px)
+        grid-template-columns: 1fr
+        gap: 4rem
+    &__all
+        display: grid
+        grid-template-columns: 1fr 1fr
+    &__texts
+        width: 36.5rem
+    &__block
+        display: flex
+        gap: 2rem
+        padding-top: 6.5rem
+        &-inside
+            width: 100%
+    &__img
+        width: 100%
+        object-fit: cover
+        height: 100%
+        @media screen and (min-width: 901px) and (max-width: 1380px)
+            display: none
+        &-group
+            padding-left: 8.3rem
+
+.big-number
+    font-size: 4rem
+    font-weight: 600
+    margin: 0
+
+// Preguntas frecuentes
+
+.section__questions
+    margin-top: 14.75rem
+    margin-bottom: 10.5rem
+    
+    @media screen and (min-width: 901px) and (max-width: 1500px)
+        grid-template-columns: 1fr
+        gap: 4rem
+    &-all
+        display: grid
+        grid-template-columns: .2fr 1.8fr
+        gap: 11.3rem
+
+.icon__open
+    width: 1.5rem
+
+.question-decoration
+    list-style: none
+    display: flex
+    justify-content: space-between
+
+.dropdown-border
+    border: 1px solid #151515
+    border-width: 1px 1px 0 1px
+    padding: 2rem 2rem 2rem 2.5rem
+    &--last
+        border: 1px solid #151515
+        border-width: 1px 1px 1px 1px
+        padding: 2.5rem 2rem 2.5rem 2.5rem
+
+.question
+    font-size: 1.4rem
+    margin-left: 4.4rem
+
+.answer
+    font-size: 1.2rem
+    padding-top: 2rem
+    font-weight: 300
+    line-height: 1.4
+    margin-left: 4.4rem
+    margin-right: 2rem
+
+//Newsletter
+
+//.newsletter
+
+// Social media
+
+// Animación Contacto
+
+@keyframes animation-contact
+    0%
+        transform: translateX(0)
+  
+    100%
+        transform: translateX(-100%)
+
+@-webkit-keyframes animation-contact
+    0% 
+        transform: translateX(0)
+    
+    100% 
+        transform: translateX(-100%)
+
+// Fin animación contacto
+
+.container__loop
+    background-color: $color--blue
+    overflow: hidden
+    height: 18rem
+
+.loop
+    font-size: 12rem
+    white-space: nowrap
+    margin-right: 1rem
+    
+.scroll-wrapper
+    display: flex
+    gap: 3rem
+    // Animación de la frase
+    animation: animation-contact 10s linear infinite
+.social-media
+    background-color: $color--blue
+    display: flex
+    justify-content: space-around
+    &__link
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: .9rem
+        width: 100%
+        &-text
+            font-size: 1.5rem
+        &:hover .icon__arrow
+            transform: rotate(-45deg)
+.icon
+    &__open
+        width: 1rem
+    &__social-media
+        width: 2.25rem
+    &__arrow
+        width: 1.5rem 
+
+.border
+    height: 11rem
+    border-top: 2px solid $color--black
+    border-bottom: 2px solid $color--black
+    border-right: 2px solid $color--black
+    width: 100%
+    display: flex
+    justify-content: center
+    &-last
+        height: 11rem
+        border-top: 2px solid $color--black
+        border-bottom: 2px solid $color--black
+        width: 100%
+        display: flex
+        justify-content: center
+.mail
+    background-color: $color--blue
+    display: flex
+    justify-content: center
+    padding: 4rem
+    &__img
+       width: 25%
+    
