@@ -1,13 +1,14 @@
 body
-    font-family: "textos"
+    color: $color--black
+    font-family: "text", sans-serif
+    font-weight: 400
 
 .container
-    margin: 0 auto
-    max-width: 80rem //para que en pantallas grandes siempre quede el contenido centrado
-    width: 100%
-    box-sizing: border-box //para que respete ese padding y no se sume al ancho 100%, evita que haga un scroll horizontal
-    padding: 1.5rem
-
-img
-    width: 100%
+    max-width: $breakpoint--m
+    margin:
+        left: auto
+        right: auto
+    padding:
+        left: $gap--m
+        right: $gap--m
 
