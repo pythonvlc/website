@@ -1,0 +1,20 @@
+.grid-layout--with-photo
+  @include grid-layout-main
+  gap: var(--gap--m)
+
+  &.right
+    @include grid-layout-main(right)
+
+  &__info
+    display: grid
+    gap: $gap--s
+    height: fit-content
+    align-self: center
+
+  &__photo
+    display: flex
+
+    & > img
+      object:
+        fit: cover
+        position: center

@@ -1,0 +1,21 @@
+.grid-layout--with-photo
+  display: grid
+
+  &__info
+    display: grid
+    gap: $gap--s
+    height: fit-content
+    align-self: center
+    padding:
+      top: var(--gap--m)
+      bottom: var(--gap--m)
+
+  &__photo
+    display: flex
+
+    & > img
+      aspect-ratio: 2 / 1
+      object-fit: cover
+
+      @media screen and (max-width: $breakpoint--xs)
+        aspect-ratio: 4 / 3

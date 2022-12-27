@@ -31,12 +31,12 @@
   padding: 0
   margin: 0
   grid-column: 1 / 3
-  
+
 
 .nav__link
   display: block
   padding: 2rem 1.25rem 1rem 1.25rem
-  font-size: 1rem 
+  font-size: 1rem
   text-decoration: none
   color: $color--black
   &-contact
@@ -57,7 +57,7 @@
   grid-column: 2 / 3
   justify-self: end //alinear a la derecha el elemento dentro del grid
   grid-column: 2 / 2
-  
+
 
 .menu__button
   width: 1.5rem
@@ -88,27 +88,7 @@
   display: grid
   grid-template-columns: 1fr 1fr
 
-
-//Hero
-
-.hero 
-  background-image: url(../img/hero.jpg)
-  background-repeat: no-repeat
-  background-size: cover //para que ocupe todo el fondo!
-  height: 100vh
-  &__title 
-      margin: 0
-      color: $color--white
-      font-size: 2.8rem
-  &__description 
-      color: $color--white
-      font-size: 1rem
-      font-weight: 500
-      line-height: 1.3
-      padding-top: 1rem
-      padding-bottom: 4rem    
-
-.logo 
+.logo
   width: 6rem
 
 .hero__group
@@ -126,3 +106,13 @@
   backdrop-filter: blur(10px)
   &--remove-blur
     backdrop-filter: none
+
+.hero
+  box-sizing: border-box
+  height: 100vh
+  max-height: 70rem
+  min-height: fit-content
+  color: $color--white
+  padding:
+    top: $gap--xl
+    bottom: $gap--xl

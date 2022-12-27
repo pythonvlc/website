@@ -1,0 +1,28 @@
+.icon-open
+  $size: 1.25rem
+  $width: 2px
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  height: $size
+  width: $size
+  transform-origin: center
+  transition: $transition--main
+
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    display: block
+    border-radius: calc(#{$width} / 2)
+    background-color: $color--black
+    transition: $transition--main
+
+  &::before
+    width: 100%
+    height: $width
+
+  &::after
+    width: $width
+    height: 100%

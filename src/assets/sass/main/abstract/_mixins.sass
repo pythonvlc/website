@@ -1,0 +1,18 @@
+@mixin bg-img($img, $size: cover, $position: center)
+  background:
+    image: url($img)
+    size: $size
+    position: $position
+    repeat: no-repeat
+
+@mixin grid-layout-main($direction: left)
+  display: grid
+  @if $direction == right
+    grid-template-columns: 7fr 13fr
+  @else
+    grid-template-columns: 13fr 7fr
+
+@mixin center-h
+  margin:
+    left: auto
+    right: auto
