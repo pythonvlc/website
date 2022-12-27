@@ -39,9 +39,9 @@ input, button, textarea, select {
 p, h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
   overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  /* -webkit-hyphens: auto; */
+  /* -moz-hyphens: auto; */
+  /* hyphens: auto; */
 }
 
 a {

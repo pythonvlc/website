@@ -1,5 +1,4 @@
 // COLORS //
-
 $color--black: #252525
 $color--black-footer: #212121
 $color--white: #fff
@@ -13,6 +12,35 @@ $color--blue: #67a7e0
 
 /* Breakpoints */
 $breakpoint--m: 1280px
+$breakpoint--s: 900px
+$breakpoint--xs-plus: 675px
+$breakpoint--xs: 500px
 
 /* Gaps */
-$gap--m: 1.5rem
+$gap--xxl: 7.5rem
+$gap--xl: 5.75rem
+$gap--l: 3.5rem
+$gap--m: 2rem
+$gap--s: 1rem
+$gap--xs: .75rem
+$gap--xxs: .5rem
+$gap--xxxs: .25rem
+
+/* Responsive vars */
+@media screen and (min-width: calc(#{$breakpoint--s} + 1px))
+  :root
+    --gap--m: 3rem
+
+@media screen and (max-width: $breakpoint--s)
+  :root
+    --gap--m: 1.5rem
+
+/* Specific element */
+$home-hero-subtitle: 31rem
+$small-width: calc(#{$breakpoint--m} / 1.5)
+
+// BORDERS //
+$border--main: 1px solid
+
+// TRANSITIONS //
+$transition--main: .3s ease-in-out
