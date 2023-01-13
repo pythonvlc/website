@@ -105,6 +105,7 @@
         & > summary
           display: grid
           grid-template-columns: 1fr auto
+          column-gap: $gap--xs
           transition: $transition--main
 
           &:hover
@@ -204,8 +205,12 @@
       justify-content: center
 
   &__title,
-  &__email,
   &__social-media--item__link
     padding:
       top: $gap--m
       bottom: $gap--m
+
+  &__email
+    padding:
+      top: $gap--l
+      bottom: $gap--l
