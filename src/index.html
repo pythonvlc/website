@@ -29,43 +29,51 @@
     <link rel="stylesheet" type="text/css" media="all and (min-width: 901px)" href="assets/sass/desktop.sass">
     <link rel="stylesheet" type="text/css" media="all and (max-width: 900px)" href="assets/sass/mobile.sass">
     <!-- AlpineJS para gestionar el evento Clic -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="assets/js/main.js"></script>
   </head>
 	<body>
     <!-- <header x-data="{ open: false }" class="header"  :class="open ? 'header--remove-blur' : ''"> -->
-    <header x-data="{ open: false }" class="header"  :class="open ? 'header--remove-blur' : ''">
-      <div class="container">
-        <!-- Navegador -->
-        <nav class="nav__container nav" x-bind:class="open ? 'nav--show' : ''">
-            <!-- Boton cerrar -->
-            <div class="nav__button-left" x-on:click="open = false">
-                <button class="header__button-nav--close"><img src="assets/img/icons/close.png" alt="botón cerrar" class="button__nav--close-img"></button>
-            </div>
-            <!-- Logo python menu -->
-            <div class="nav__button">
-                <a href="#inicio"><img src="assets/img/python-valencia.png" alt="botón inicio" class="logo__home"></a>
-            </div>
-            <!-- Menu -->
-            <ul class="nav__ul">
-                <li class="nav__item-contact">
-                    <a href="#contacto" class="nav__link-contact">Contacto</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#preguntas-frecuentes" class="nav__link">Preguntas frecuentes</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#quienes-somos" class="nav__link">Quiénes somos</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#proximos-eventos" class="nav__link">Eventos</a>
-                </li>
-            </ul>
+    <header id="header" class="header container">
+      <!-- Navegador -->
+      <div class="header__main">
+        <!-- Boton cerrar -->
+        <button id="menu-button" class="header__main--button mobile-view" aria-label="Abrir/cerrar menú">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <!-- Logo python menu -->
+        <nav class="header__main--link">
+          <a href="#inicio" class="desktop-view to-start">
+            <img src="assets/img/logo-python-valencia.webp" alt="Inicio">
+          </a>
+          <a href="#contacto" class="mobile-view header__contact to-contact">Contacto</a>
         </nav>
       </div>
+      <!-- Menu -->
+      <nav id="menu" class="header__nav">
+        <a href="#inicio" class="mobile-view header__nav--logo to-start">
+          <img src="assets/img/logo-python-valencia.webp" alt="botón inicio" class="logo__home">
+        </a>
+        <ul class="header__nav--list text--body--m">
+          <li>
+            <a id="to-event" href="#proximos-eventos" class="text--link--highlight">Eventos</a>
+          </li>
+          <li>
+            <a id="to-about" href="#quienes-somos" class="text--link--highlight">Quiénes somos</a>
+          </li>
+          <li>
+            <a id="to-faqs" href="#preguntas-frecuentes" class="text--link--highlight">Preguntas frecuentes</a>
+          </li>
+          <li>
+            <a href="#contacto" class="header__contact text--medium to-contact">Contacto</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
       <!-- Hero -->
-      <section class="hero home--hero">
+      <section id="inicio" class="hero home--hero">
         <div class="container home--hero__heading">
           <img
             src="assets/img/logo-python-valencia.webp"
@@ -82,10 +90,11 @@
         </div>
       </section>
       <!-- Próximos eventos -->
-      <section class="events container">
+      <section class="events container scroll-to">
+        <span id="proximos-eventos" class="scroll-to__element" aria-hidden="true"></span>
         <article class="events__all grid-layout--with-photo">
           <section class="events__all--info grid-layout--with-photo__info">
-            <h2 class="events__all--info__title text--title--m" id="proximos-eventos">Próximo evento</h2>
+            <h2 class="events__all--info__title text--title--m">Próximo evento</h2>
             <h3 class="events__all--info__subtitle text--title--s">Testing en Python, de 0 a 100</h3>
             <p class="events__all--info__description">¿Necesitan tests tus proyectos? ¿Qué es un buen test? ¿De qué herramientas disponemos en Python para testing? ¿Qué trucos tienen esas herramientas? En esta charla mostraremos tanto los conceptos generales del testing como experiencias prácticas con técnicas más avanzadas.</p>
             <time datetime="2022-11-14" class="events__all--info__date label white">17 NOV</time>
@@ -99,13 +108,14 @@
         </article>
       </section>
       <!-- Comunidad -->
-      <section class="community container">
+      <section class="community container scroll-to">
+        <span id="quienes-somos" class="scroll-to__element" aria-hidden="true"></span>
         <article class="grid-layout--with-photo right">
           <figure class="grid-layout--with-photo__photo">
             <img src="assets/img/foto-comunidad.webp" alt="miembros de la comunidad Python Valencia" class="community__photo-members">
           </figure>
           <section class="grid-layout--with-photo__info">
-            <h3 id="quienes-somos" class="text--title--s">Quiénes somos</h3>
+            <h3 class="text--title--s">Quiénes somos</h3>
             <h2 class="text--title--m">La comunidad de Python Valencia</h2>
             <p>Es un grupo de enamorados de la programación, buenas prácticas y arquitecturas que se dedican a compartir sus conocimientos sobre el lenguaje de la pitón que más nos gusta.</p>
           </section>
@@ -146,9 +156,10 @@
         </article>
       </section>
       <!-- Preguntas frecuentes -->
-      <section class="faqs container">
+      <section class="faqs container scroll-to">
+        <span id="preguntas-frecuentes" class="scroll-to__element" aria-hidden="true"></span>
         <div class="faqs__all grid-layout--with-photo right">
-          <h2 id="preguntas-frecuentes" class="text--title--m">Preguntas frecuentes</h2>
+          <h2 class="text--title--m">Preguntas frecuentes</h2>
           <div class="faqs__all--questions">
             <details class="faqs__all--questions__item">
               <summary class="text--body--l">
@@ -193,7 +204,8 @@
         <h2>newsletter</h2>
       </section>
       <!-- Contacta -->
-      <nav class="contact">
+      <nav class="contact scroll-to">
+        <span id="contacto" class="scroll-to__element" aria-hidden="true"></span>
         <div class="contact__title">
           <h2 class="text--title--l">Contacta con nosotros.</h2>
         </div>
@@ -229,7 +241,7 @@
     <footer class="footer">
       <section class="container">
         <figure class="footer__logo">
-          <img src="assets/img/python-valencia.png" alt="logo python">
+          <img src="assets/img/logo-python-valencia.webp" alt="logo python">
           <figcaption class="text--body--l">
             Python Valencia
           </figcaption>

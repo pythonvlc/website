@@ -1,77 +1,86 @@
 .header
-  width: 100%
-  display: flex
-  justify-content: right
-  align-items: center
   position: fixed
-  backdrop-filter: blur(10px)
   top: 0
-  right: 0
   left: 0
-  z-index: 99999
-
-// Nav
-
-.nav__container
-  margin: 0auto
-  padding: 1rem 0
-  scroll-behavior: smooth
-
-.header__logo
-  width: 2rem
-
-.nav__ul
+  right: 0
+  padding:
+    top: $gap--m
+    bottom: $gap--s
   display: flex
-  flex-direction: row-reverse
-  gap: 2rem
+  justify-content: center
   align-items: center
-  //padding: 0
+  z-index: 90
+  transition: $transition--main
 
-.nav__link
-  display: block
-  //padding: 0.5rem 1rem
-  transition: 0.5s
-  color: $color--white
-  &-contact
+  &::before
+    content: ""
     display: block
-      //padding: 0.5rem 1rem
-    transition: 0.5s
+    position: absolute
+    top: 0
+    height: 100%
+    width: 100vw
+    backdrop-filter: blur(10px)
+    z-index: -1
+    transition: $transition--main
+
+  &__main
+    margin-right: auto
+
+    &--link > .desktop-view
+      display: flex
+      height: 2.75rem
+      justify-content: center
+      align-items: center
+      opacity: 0
+      transition: opacity $transition--main
+
+      & > img
+        height: 100%
+        object:
+          fit: contain
+          position: left
+
+
+  &__nav
+    margin-left: auto
+
+    &--list
+      display: grid
+      grid-auto-flow: column
+      column-gap: $gap--s
+      align-items: center
+      width: max-content
+      color: $color--white
+
+  &__contact
+    position: relative
+    display: flex
+    padding: $gap--xxxs $gap--s
     color: $color--orange
+    border: $border--main $color--orange
+    background-color: rgba($color--orange, .15)
+    transition: $transition--main
 
-.nav__item
-  &:hover
-    text-decoration: underline
-    text-decoration-color: $color--white
-    &-contact
-      background-color: #fd760047
-      border: 1px solid $color--orange
-      padding: .5rem 1rem
-      &:hover
-        background-color: #fd760067
-        border: 1px solid $color--orange
-        padding: .5rem 1rem
+    &:hover
+      color: $color--white
+      background-color: rgba($color--orange, .5)
 
-// Oculta botón de abrir o cerrar
+  &.main
 
-.nav__button
-  display: none
-  &-left
-    display: none
+    &::before
+      background-color: rgba($color--white, .5)
 
-.header__button-nav--open
-  display: none
-  background-color: #fff0
-  border: none
+    .header__main--link > .desktop-view
+      opacity: 1
 
-//buttons
+    .text--link--highlight
+      color: $color--black
 
-.contact__button
-  display: none
+      &::before
+        background-color: $color--black
 
-.logo__home
-  display: none
-
-// Hero
+  &.hidden
+    transform: translateY(-101%)
 
 .hero
   box-sizing: border-box

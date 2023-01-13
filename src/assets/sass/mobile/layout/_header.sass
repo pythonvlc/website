@@ -1,111 +1,127 @@
-// Oculta el nav en la parte izquiera
-.nav
-  transform: translateX(-100vw)
-  transition: 0.5s
-  background-color: $color--background-menu
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  display: grid
-  grid-template-columns: 1fr 1fr
-  grid-template-rows: 4.275rem 1fr
-
-// Muestra el nav
-.nav--show
-  transform: translateX(0)
-
-.nav__button
-  text-align: right
-  margin: 1rem
-  &-left
-    margin: 1.5rem
-    text-aling: left
-  &-nav--close
-    width: 1rem
-    grid-column: 1 / 2
-
-.nav__ul
-  list-style: none
-  padding: 0
-  margin: 0
-  grid-column: 1 / 3
-
-
-.nav__link
-  display: block
-  padding: 2rem 1.25rem 1rem 1.25rem
-  font-size: 1rem
-  text-decoration: none
-  color: $color--black
-  &-contact
-    display: block
-    padding: 2rem 1.25rem 1rem 1.25rem
-    font-size: 1rem
-    text-decoration: none
-    color: $color--black
-
-//buttons
-
-.contact__button
-  color: $color--orange
-  background-color: #fd760047
-  border: 1px solid $color--orange
-  padding: .5rem 1rem
-  width: fit-content //para que se adapte al contenido y no crezca más de eso
-  grid-column: 2 / 3
-  justify-self: end //alinear a la derecha el elemento dentro del grid
-  grid-column: 2 / 2
-
-
-.menu__button
-  width: 1.5rem
-  height: 1.5rem
-
-.header__button-nav--open
-  background: transparent
-  border: none
-  width: fit-content
-
-.header__button-nav--close
-  background: transparent
-  border: none
-  grid-column: 1 / 2
-
-.button__nav--close-img
-    width: 1.5rem
-    height: 1.5rem
-
-.logo__home
-  width: 2rem
-  grid-column: 2 / 3
-  padding-top: .3rem
-  margin-right: .5rem
-
-//Menú móvil botones alineados
-.menu__mobile
-  display: grid
-  grid-template-columns: 1fr 1fr
-
-.logo
-  width: 6rem
-
-.hero__group
-  display: flex
-  flex-direction: column
-  justify-content: end
-  height: 100vh
-
 .header
+  $button-size: 2rem
   position: fixed
   right: 0
   left: 0
   top: 0
-  z-index: 100
+  padding:
+    top: $gap--m
+    bottom: $gap--s
   backdrop-filter: blur(10px)
-  &--remove-blur
-    backdrop-filter: none
+  z-index: 90
+  transition: $transition--main
+
+  &__contact
+    position: relative
+    display: flex
+    width: max-content
+    padding: $gap--xxxs $gap--s
+    color: $color--orange
+    border: $border--main $color--orange
+    background-color: rgba($color--orange, .15)
+    transition: $transition--main
+
+    &:hover
+      color: $color--white
+      background-color: rgba($color--orange, .5)
+
+  &__main
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+
+    &--button
+      position: relative
+      display: flex
+      height: $button-size
+      background-color: unset
+      border: unset
+      padding: $gap--xxxs 0
+      z-index: 10
+
+      & > span
+        position: absolute
+        display: block
+        height: 2px
+        background-color: $color--white
+        transition: $transition--slow
+
+        &:not(&:last-child)
+          width: $button-size
+          align-self: center
+
+        &:first-child
+          transform: translateY(calc(-#{$button-size} / 2 + #{$gap--xxxs}))
+
+        &:last-child
+          align-self: self-end
+          width: calc(#{$button-size} / 2)
+          opacity: 1
+
+      &.open > span
+        background-color: $color--black
+
+        &:first-child
+          transform: translateY(0) rotate(45deg)
+
+        &:nth-child(2)
+          transform: rotate(-45deg)
+
+        &:last-child
+          width: 0
+          opacity: 0
+
+    .header__contact
+      margin-left: auto
+
+  &__nav
+    box-sizing: border-box
+    position: fixed
+    inset: 0
+    height: 100%
+    width: 100%
+    padding: calc(#{$button-size} + #{$gap--m} * 2 + #{$gap--s}) var(--gap--m) $gap--l
+    background-color: rgba($color--white, .9)
+    backdrop-filter: blur(10px)
+    transform: translateX(-100%)
+    transition: $transition--slow
+
+    &.open
+      transform: translateX(0)
+
+    &--logo
+      box-sizing: border-box
+      position: absolute
+      right: 0
+      top: $gap--m
+      display: flex
+      height: $button-size
+      width: 50%
+      padding-right: var(--gap--m)
+
+      & > img
+        object:
+          fit: contain
+          position: right
+
+    &--list
+      display: grid
+      row-gap: $gap--s
+      font-size: 1.25rem
+
+      & > li:last-child
+        margin-top: $gap--xxs
+
+      .text--link--highlight::before
+        background-color: $color--black
+
+  &.main
+    background-color: rgba($color--white, .5)
+
+    .header__main--button > span
+      background-color: $color--black
+
+  &.hidden
+    transform: translateY(-101%)
 
 .hero
   box-sizing: border-box
