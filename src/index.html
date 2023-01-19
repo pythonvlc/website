@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" media="all and (min-width: 901px)" href="assets/sass/desktop.sass">
     <link rel="stylesheet" type="text/css" media="all and (max-width: 900px)" href="assets/sass/mobile.sass">
     <!-- AlpineJS para gestionar el evento Clic -->
-    <script defer src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </head>
 	<body>
     <!-- <header x-data="{ open: false }" class="header"  :class="open ? 'header--remove-blur' : ''"> -->
@@ -206,9 +206,7 @@
       <!-- Contacta -->
       <nav class="contact scroll-to">
         <span id="contacto" class="scroll-to__element" aria-hidden="true"></span>
-        <div class="contact__title">
-          <h2 class="text--title--l">Contacta con nosotros.</h2>
-        </div>
+        <div id="contact-title-container" class="contact__title"><h2 id="contact-title" class="text--title--l">Contacta con nosotros.</h2></div>
         <ul class="contact__social-media">
           <li class="contact__social-media--item">
             <a href="https://t.me/python_vlc" target="_blank" class="contact__social-media--item__link">
