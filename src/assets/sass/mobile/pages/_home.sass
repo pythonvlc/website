@@ -136,7 +136,34 @@
 
 // Newsletter
 .newsletter
-  display: none
+  margin-top: $gap--xl
+
+  &__content
+    display: grid
+    row-gap: $gap--xs
+    padding: $gap--m var(--gap--m)
+    color: $color--white
+    background-color: $color--black
+
+    &--button
+      display: grid
+      grid-auto-flow: column
+      align-items: center
+      column-gap: $gap--xxs
+      margin-top: $gap--m
+      padding-right: $gap--m
+      transition: background-color $transition--main
+
+      & > .icon-right-arrow
+        font-size: .7rem
+        transform-origin: center
+        transition: $transition--main
+
+    &:hover > &--button
+      background-color: $color--orange
+
+      & > .icon-right-arrow
+        transform: translate(.5rem) scale(1.1) rotate(-9deg)
 
 // Contacto
 .contact
