@@ -5,9 +5,7 @@ before_script:
   - npm i
 pages:
   script:
-    - rm -rf public
-    - mkdir public
-    - npm run build --dist-dir public
+    - npm run build src/index.html --dist-dir public
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
