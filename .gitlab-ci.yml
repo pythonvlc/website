@@ -5,7 +5,8 @@ before_script:
   - npm i
 pages:
   script:
-    - npm run build --dist-dir public
+    - npm run build --dist-dir ./public
+    - ls
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
