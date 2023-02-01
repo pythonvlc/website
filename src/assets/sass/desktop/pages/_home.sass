@@ -20,9 +20,15 @@
 
   &__all
     background-color: $color--orange
+    outline: 2px solid transparent
+    transition: $transition--main
 
     &--photo
       position: relative
+      overflow: hidden
+
+      & > .events__img
+        transition: $transition--main
 
       & > .label
         position: absolute
@@ -39,6 +45,9 @@
 
       &__title
         grid-area: title
+        text-decoration-line: underline
+        text-decoration-color: $color--orange
+        transition: text-decoration-color $transition--main
 
       &__subtitle
         grid-area: subtitle
@@ -54,6 +63,15 @@
 
       &__location
         grid-area: location
+
+    &:hover
+      outline-color: $color--black
+
+      .events__all--photo > .events__img
+        transform: scale(1.05)
+
+      .events__all--info__title
+        text-decoration-color: $color--black
 
 // Comunidad
 .community
@@ -96,7 +114,6 @@
       border: $border--main $color--black
 
       &__item
-        padding: var(--gap--m)
         transition: $transition--main
 
         &:not(&:last-child)
@@ -106,6 +123,7 @@
           display: grid
           grid-template-columns: 1fr auto
           column-gap: $gap--xs
+          padding: var(--gap--m)
           transition: $transition--main
 
           &:hover
@@ -123,7 +141,10 @@
             transform: rotate(45deg)
 
         & > p
-          margin-top: var(--gap--m)
+          padding:
+            bottom: var(--gap--m)
+            left: var(--gap--m)
+            right: var(--gap--m)
 
 // Newsletter
 .newsletter
@@ -137,6 +158,12 @@
     padding: $gap--m
     color: $color--white
     background-color: $color--black
+
+    & > h2
+      text-decoration-line: underline
+      text-decoration-color: $color--black
+      text-decoration-thickness: 1px
+      transition: text-decoration-color $transition--main
 
     &--button
       display: grid
@@ -152,11 +179,16 @@
         transform-origin: center
         transition: $transition--main
 
-    &:hover > &--button
-      background-color: $color--orange
+    &:hover
 
-      & > .icon-right-arrow
-        transform: translate(.5rem) scale(1.1) rotate(-9deg)
+      & > h2
+        text-decoration-color: $color--white
+
+      & > .newsletter__content--button
+        background-color: $color--orange
+
+        & > .icon-right-arrow
+          transform: translate(.5rem) scale(1.1) rotate(-9deg)
 
 // Contacto
 .contact
