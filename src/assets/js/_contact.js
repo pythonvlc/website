@@ -65,16 +65,31 @@ function range(start, end) {
   );
 };
 
-const resizeObserver = new ResizeObserver(() => {
+/*const resizeObserver = new ResizeObserver((entries) => {
+  console.log(entries)
   stopInterval();
   startAnimation();
 });
-resizeObserver.observe(contactTitleContainer);
+resizeObserver.observe(contactTitleContainer);*/
+
+function debounce(func){
+  let timer;
+  return function(event){
+      if(timer) {
+        clearTimeout(timer);
+        stopInterval();
+      }
+      timer = setTimeout(func, 200, event);
+  };
+}
+
+window.addEventListener("resize", debounce( startAnimation ));
+
 
 const intersectionObserverOptions = { threshold: 0 }
 const intersectionObserverCallback = (entries) => {
   for (const entry of entries) {
-    entry.isIntersecting
+    entry.isIntersecting && !intervalId
       ? startAnimation()
       : stopInterval();
   }

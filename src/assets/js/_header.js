@@ -26,6 +26,7 @@ let oldScrollValue = 0;
 let newScrollValue = window.pageYOffset;
 const classMain = "main";
 const classHidden = "hidden";
+const lockBodyScroll = "body-scroll-lock";
 
 // FUNCTIONS
 
@@ -33,9 +34,11 @@ const classHidden = "hidden";
 function toggleMenu() {
   if (menuButton.classList.contains(classOpen)) {
     closeMenu();
+    document.body.classList.remove(lockBodyScroll);
   } else {
     menuButton.classList.add(classOpen);
     menu.classList.add(classOpen);
+    document.body.classList.add(lockBodyScroll);
   }
 };
 function closeMenu() {
@@ -78,7 +81,7 @@ toContactElements.forEach((i) => {
 });
 
 window.onscroll = () => {
-  heroHeight = hero.scrollHeight - header.scrollHeight;
+  heroHeight = hero.scrollHeight - header.offsetHeight;
 
   // check position to add or remove the style to header to be visible on main content
   if (window.scrollY >= heroHeight) {
@@ -88,7 +91,7 @@ window.onscroll = () => {
   }
 
   // check position to hide or show header
-  if (window.scrollY >= header.scrollHeight) {
+  if (window.scrollY >= header.offsetHeight) {
     newScrollValue = window.pageYOffset;
     if (oldScrollValue < newScrollValue) {
       header.classList.add(classHidden);
