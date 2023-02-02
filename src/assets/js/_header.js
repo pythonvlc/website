@@ -44,6 +44,7 @@ function toggleMenu() {
 function closeMenu() {
   menuButton.classList.remove(classOpen);
   menu.classList.remove(classOpen);
+  document.body.classList.remove(lockBodyScroll);
 };
 
 // Smooth scroll to
