@@ -73,6 +73,52 @@
       .events__all--info__title
         text-decoration-color: $color--black
 
+// Sin eventos
+.no-event
+  display: grid
+  grid-template-columns: 2fr 1fr
+  grid-template-rows: 1fr auto
+  grid-template-areas: "hgroup image" "link image"
+  gap: $gap--m
+  background-color: $color--orange
+  padding: $gap--m
+  position: relative
+  margin:
+    top: $gap--xxl
+    bottom: $gap--xxl
+  &::after
+    $size: 150px
+    display: block
+    content: ""
+    width: $size
+    height: $size
+    position: absolute
+    top: -70px
+    right: 69px
+    background:
+      image: url("../img/talks/loading.svg")
+      size: cover
+    animation:
+      name: animation-rotation-loading
+      duration: 10s
+      iteration-count: infinite
+      timing-function: linear
+  &__hgroup
+    grid-area: hgroup
+  &__title
+    margin-bottom: $gap--m
+  &__wrap-image
+    grid-area: image
+    background-color: $color--white
+  &__image
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: right bottom
+    transform: translatex(1.5rem)
+  &__wrap-link
+    grid-area: link
+
 // Comunidad
 .community
   margin-top: $gap--xxl

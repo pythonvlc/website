@@ -22,12 +22,20 @@
 .text--orange
   color: $color--orange
 
-.text--link--main
-  text-decoration: underline
-  transition: $transition--main
+.text--link
 
-  &:hover
+  &--main,
+  &--black
+    text-decoration: underline
+    transition: $transition--main
+
+  &--main:hover
     color: $color--orange
+
+  &--black:hover
+    color: $color--black
+    text-decoration-color: transparent
+
 
 .text--link--highlight
   position: relative

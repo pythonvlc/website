@@ -209,7 +209,7 @@
         </div>
       </section>
       <!-- Newsletter -->
-      <section class="newsletter container">
+      <section class="newsletter container" id="newsletter">
         <a
           href="https://buttondown.email/python-valencia"
           target="_blank"
@@ -222,7 +222,7 @@
         </a>
       </section>
       <!-- Contacta -->
-      <nav class="contact scroll-to">
+      <nav class="contact scroll-to" id="contact">
         <span id="contacto" class="scroll-to__element" aria-hidden="true"></span>
         <div id="contact-title-container" class="contact__title"><h2 id="contact-title" class="text--title--l">Contacta con nosotros.</h2></div>
         <ul class="contact__social-media">
