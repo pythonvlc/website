@@ -4,7 +4,7 @@ image: node:lts
 before_script:
   - npm i
   - apt-get update
-  - apt-get install -n php xmlstarlet bash
+  - apt-get install -y php xmlstarlet bash
 pages:
   script:
     # Get data from MeetUp and render index.html
