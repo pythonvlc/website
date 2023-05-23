@@ -1,47 +1,61 @@
-# Python Valencia website
+# Python Valencia Page
 
-This page is a static site that is generated with PHP for the template system and Parcel for the static ones.
+🇪🇸 Esta página es un sitio estático para el grupo local de Python Valencia. El HTML se genera usando el motor de plantillas de PHP, mientras que el compilado de SASS junto a las optimizaciones las gestiona Parcel.
+
+La web esta alojada en GitLab Pages, en este mismo repositorio.
+
+Revisa la guia de colaboración antes de hacer Merge Request.
+
+🇬🇧 This page is a static site for the local Python Valencia. The HTML is generated using the PHP template engine, while the SASS compilation and optimisations are handled by Parcel.
+
+The website is hosted on GitLab Pages, in this repository.
+
+Check the collaboration guide before making Merge Request.
 
 ## Install
 
-1. Install the necessary node dependencies. It is used to compile SASS.
+1. Install `npm`.
+
+Example in Debian/Ubuntu.
+
+```sh
+sudo apt install npm
+```
+
+2. Install the necessary node dependencies. It is used to compile SASS.
 
 ```sh
 npm i
 ```
 
-2. Add install `xmlstarlet`. It is used to get dynamic data from the MeetUp and build the page.
+3. Install `xmlstarlet`. It is used to get dynamic data from the MeetUp and build the page.
+
+Example in Debian/Ubuntu.
 
 ```sh
 sudo apt install xmlstarlet
 ```
 
-3. Sets the `MEETUP_COOKIES` environment variable with the cookies for a MeetUp session. It is used to access the RSS feed.
+## Build
+
+1. Sets the `MEETUP_COOKIES` environment variable with the cookies for a MeetUp session. It is used to access the RSS feed.
 
 ```sh
 export MEETUP_COOKIES="MEETUP_BROWSER_ID=id=20d2693f-6..."
 ```
 
-## Development
+2. Create an image for the cover (Optional): `src/assets/talks/cover.webp`.
 
-To start the local server run:
-
-```
-npm run start
-```
-
-To observe the changes run:
-
-```
-npm run watch
-```
-
-## Production
-
-1. Create an image for the cover (Optional): `src/assets/talks/cover.webp`.
-
-2. Create `index.html` with the latest MeetUp event information and generates the final `index.html` with compiled SASS and other optimisations.
+3. Generate `index.html`.
 
 ```sh
 bash build.sh
 ```
+
+The files needed to deploy will have been generated in `dist` folder.
+
+## Collaboration Guide
+
+- Before adding new HTML or SASS, propose a graphic design that can be reviewed in a Merge Request. Don't forget to design both mobile and desktop.
+
+- If you are going to do a SASS fix, check the existing classes in case you can reuse some of them. The whole project is modularised.
