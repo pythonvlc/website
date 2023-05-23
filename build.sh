@@ -14,7 +14,7 @@ get_ogimage() {
 get_last_event() {
     # Download feed from the last event from MeetUp
 
-    wget --header=Cookie: "$MEETUP_COOKIES" "$URL_RSS" -O "$TEMP_XML"
+    wget --header="Cookie: $MEETUP_COOKIES" "$URL_RSS" -O "$TEMP_XML"
 
     # Get data
     # Check if there are events
