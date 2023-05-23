@@ -74,6 +74,45 @@
       .events__all--info__title
         text-decoration-color: $color--black
 
+// Sin eventos
+.no-event
+  position: relative
+  background-color: $color--orange
+  padding: $gap--m
+  padding-bottom: $gap--xxl
+  margin:
+    left: 0
+    right: 0
+    bottom: $gap--xxl
+  &::after
+    $size: 120px
+    display: block
+    content: ""
+    width: $size
+    height: $size
+    position: absolute
+    bottom: -49px
+    right: 69px
+    background:
+      image: url("../img/talks/loading.svg")
+      size: cover
+    animation:
+      name: animation-rotation-loading
+      duration: 10s
+      iteration-count: infinite
+      timing-function: linear
+  &__title
+    margin-bottom: $gap--m
+  &__wrap-link
+    margin: $gap--m 0
+  &__wrap-image
+    background-color: $color--white
+  &__image
+    width: 100%
+    object-fit: cover
+    object-position: center bottom
+    transform: translatex(1.5rem)
+
 // Comunidad
 .community
   margin-top: $gap--xl
