@@ -1,3 +1,7 @@
+<?php
+  // Get arguments from command line
+  parse_str($argv[2], $event);
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -84,27 +88,11 @@
         </div>
       </section>
       <!-- Próximos eventos -->
-<!--       <section class="events container scroll-to">
-        <span id="proximos-eventos" class="scroll-to__element" aria-hidden="true"></span>
-        <a
-          href="https://www.meetup.com/es-ES/python-valencia-meetup/events/292063413/"
-          target="_blank"
-          class="events__all grid-layout--with-photo"
-        >
-          <section class="events__all--info grid-layout--with-photo__info">
-            <h2 class="events__all--info__title text--title--m">Próximo evento</h2>
-            <h3 class="events__all--info__subtitle text--title--s">Gestión de entornos Python con Docker y Poetry</h3>
-            <p class="events__all--info__description">Descubre cómo utilizar Docker y Poetry para simplificar la gestión de entornos de desarrollo de Python. Aprende cómo Docker puede ayudarte a crear entornos aislados y reproducibles, y cómo Poetry puede ayudarte a gestionar las dependencias de tus proyectos. Con estas herramientas, podrás centrarte en la creación de tu aplicación sin preocuparte por los problemas de compatibilidad y dependencias.</p>
-            <time datetime="2022-11-14" class="events__all--info__date label white">23 MAR</time>
-            <time datetime="19:00" class="events__all--info__time label white">19:00h</time>
-            <p class="events__all--info__location label white">Idecrea - Carrer dels Centellés</p>
-          </section>
-          <figure class="events__all--photo grid-layout--with-photo__photo">
-            <img src="assets/img/talks/manuel-s-lemos.webp" alt="Comunidad Python Valencia, Andros Fenollosa" class="events__img">
-            <figcaption class="label black">Charla</figcaption>
-          </figure>
-        </a>
-      </section> -->
+      <?php if ($event['title'] != ''):  ?>
+        <?php require_once "_active-event.php" ?>
+      <?php else: ?>
+        <?php require_once "_inactive-event.php" ?>
+      <?php endif; ?>
       <!-- Comunidad -->
       <section class="community container scroll-to">
         <span id="quienes-somos" class="scroll-to__element" aria-hidden="true"></span>
@@ -131,22 +119,22 @@
       <section class="pros">
         <article class="pros__all container grid-layout--with-photo">
           <section class="grid-layout--with-photo__info">
-              <h2 class="text--title--m">Ventajas de pertenecer a la comunidad</h2>
-              <p>Al estar en contacto directo con otros miembros de la comunidad, se pueden obtener numerosas ventajas.</p>
-              <ol class="pros__list">
-                <li>
-                  <p class="text--title--l">1_</p>
-                  <p>Se puede aprender mucho sobre el lenguaje y cómo aplicarlo a diversos proyectos.</p>
-                </li>
-                <li>
-                  <p class="text--title--l">2_</p>
-                  <p>También te ayudará a conocer las últimas tendencias en el desarrollo de Python.</p>
-                </li>
-                <li>
-                  <p class="text--title--l">3_</p>
-                  <p>Estar al tanto de los últimos lanzamientos de la plataforma.</p>
-                </li>
-              </ol>
+            <h2 class="text--title--m">Ventajas de pertenecer a la comunidad</h2>
+            <p>Al estar en contacto directo con otros miembros de la comunidad, se pueden obtener numerosas ventajas.</p>
+            <ol class="pros__list">
+              <li>
+                <p class="text--title--l">1_</p>
+                <p>Se puede aprender mucho sobre el lenguaje y cómo aplicarlo a diversos proyectos.</p>
+              </li>
+              <li>
+                <p class="text--title--l">2_</p>
+                <p>También te ayudará a conocer las últimas tendencias en el desarrollo de Python.</p>
+              </li>
+              <li>
+                <p class="text--title--l">3_</p>
+                <p>Estar al tanto de los últimos lanzamientos de la plataforma.</p>
+              </li>
+            </ol>
           </section>
           <figure class="pros__photo grid-layout--with-photo__photo">
             <img src="assets/img/ventajas.webp" alt="comunidad Python Valencia" class="pros__img">

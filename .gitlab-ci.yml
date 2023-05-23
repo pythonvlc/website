@@ -3,9 +3,13 @@ image: node:lts
 # Functions that should be executed before the build script is run
 before_script:
   - npm i
+  - apt-get update
+  - apt-get install php xmlstarlet bash
 pages:
   script:
-    - npm run build --target src/index.html
+    # Get data from MeetUp and render index.html
+    - bash build.sh
+    # Dist
     - mv dist public
   artifacts:
     paths:
