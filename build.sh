@@ -20,7 +20,7 @@ get_last_event() {
     # Check if there are events
     if [ -z "$(xmlstarlet sel -t -v '//item' $TEMP_XML)" ]; then
 	# No events found"
-	render_html "" "" "" "" ""
+	render_html "" "" "" "" "" "" ""
     else
 	title=$(xmlstarlet sel -t -v "//item/title" $TEMP_XML)
 	link=$(xmlstarlet sel -t -v "//item/guid" $TEMP_XML)
