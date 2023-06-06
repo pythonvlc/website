@@ -28,7 +28,11 @@
       overflow: hidden
 
       & > .events__img
-        transition: $transition--main
+        transform-origin: right bottom
+        transform: scale(1.5)
+        object-position: right
+        &:hover
+          transform: scale(1.5)
 
       & > .label
         position: absolute

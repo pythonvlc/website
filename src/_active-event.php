@@ -17,7 +17,7 @@ $pathCover = 'src/assets/img/talks/cover.webp';
       <p class="events__all--info__location label white">WayCo Ruzafa - Carrer de l'Almirall Cadarso, 26, 46005 València, Valencia</p>
     </section>
     <figure class="events__all--photo grid-layout--with-photo__photo">
-      <img src="<?php if (file_exists($pathCover)): ?><?= str_replace('src/', './', $pathCover) ?><?php else: ?><?= $event['url_image'] ?><?php endif; ?>" alt="Conferenciante" class="events__img">
+      <img src="<?= $event['url_image'] ?>" alt="Conferenciante" class="events__img">
       <figcaption class="label black">Charla</figcaption>
     </figure>
   </a>
