@@ -12,8 +12,8 @@ $pathCover = 'src/assets/img/talks/cover.webp';
       <h2 class="events__all--info__title text--title--m">Próximo evento</h2>
       <h3 class="events__all--info__subtitle text--title--s"><?= $event['title'] ?></h3>
       <p class="events__all--info__description"><?= $event['description'] ?></p>
-      <time datetime="2022-11-14" class="events__all--info__date label white"><?= $event['date_format'] ?></time>
-      <time datetime="19:00" class="events__all--info__time label white">19:00h</time>
+      <time datetime="<?= str_replace(" ", "T", $event['datetime']) ?>" class="events__all--info__date label white"><?= $event['date_format'] ?></time>
+      <time aria-hidden="true" datetime="<?= $event['hour_format'] ?>" class="events__all--info__time label white"><?= $event['hour_format'] ?>h</time>
       <p class="events__all--info__location label white">WayCo Ruzafa - Carrer de l'Almirall Cadarso, 26, 46005 València, Valencia</p>
     </section>
     <figure class="events__all--photo grid-layout--with-photo__photo">

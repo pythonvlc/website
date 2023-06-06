@@ -26,10 +26,13 @@ get_last_event() {
 	link=$(xmlstarlet sel -t -v "//item/guid" $TEMP_XML)
 	url_image=$(get_ogimage $link)
 	description=$(xmlstarlet sel -t -v "//item/description" $TEMP_XML)
+	event_date=$(echo "$description" | grep -oP '[A-Z][a-z]+day, [A-Z][a-z]+ \d{1,2} at \d{1,2}:\d{2} (AM|PM)')
 	pub_date=$(xmlstarlet sel -t -v "//item/pubDate" $TEMP_XML)
-	date_format=$(date -d "(echo '$pub_date' | awk '{print $4,$3,$6}')" +"%d %B")
+	datetime=$(date -d "$(echo "$event_date" | sed -E 's/(.*), ([A-Za-z]+) ([0-9]+) at (.*) ([AP]M)/\1 \2 \3 \4 \5/')" '+%Y-%m-%d %H:%M:%S')
+	date_format=$(date -d "$datetime" +%d\ %B)
+	hour_format=$(date -d "$datetime" +%H:%M)
 	# Render HTML
-	render_html "$title" "$link" "$url_image" "$description" "$date_format"
+	render_html "$title" "$link" "$url_image" "$description" "$datetime" "$date_format" "$hour_format"
     fi
 
     # Clean
@@ -45,7 +48,7 @@ render_html() {
     rm -f "$path_index"
 
     # Make new index.html with the new data
-    php "$file_index" -- "title=$1&link=$2&url_image=$3&description=$4&date_format=$5" > "$file_output"
+    php "$file_index" -- "title=$1&link=$2&url_image=$3&description=$4&datetime=$5&date_format=$6&hour_format=$7" > "$file_output"
 
     # Compile Parcel
     npm run build
