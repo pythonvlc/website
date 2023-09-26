@@ -10,12 +10,14 @@ const toStartElements = document.querySelectorAll(".to-start");
 const toEventElement = document.querySelector("#to-event");
 const toAboutElement = document.querySelector("#to-about");
 const toFaqsElement = document.querySelector("#to-faqs");
+const toCodeOfConductElement = document.querySelector("#to-code-of-conduct");
 const toContactElements = document.querySelectorAll(".to-contact");
 
 // elements to be scrolled to
 const eventElement = document.querySelector("#proximos-eventos");
 const aboutElement = document.querySelector("#quienes-somos");
 const faqsElement = document.querySelector("#preguntas-frecuentes");
+const codeOfConductElement = document.querySelector("#codigo-de-conducta");
 const contactElement = document.querySelector("#contacto");
 
 // constants and variables for header changes on scroll
@@ -74,6 +76,9 @@ toAboutElement.addEventListener("click", (e) => {
 });
 toFaqsElement.addEventListener("click", (e) => {
   scrollToElement(faqsElement, e);
+});
+toCodeOfConductElement.addEventListener("click", (e) => {
+  scrollToElement(codeOfConductElement, e);
 });
 toContactElements.forEach((i) => {
   i.addEventListener("click",(e) => {
