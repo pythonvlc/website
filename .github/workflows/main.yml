@@ -26,7 +26,6 @@ jobs:
         env:
           MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
         run: |
-          echo KEY: '${MEETUP_COOKIES}'
           # Get data from MeetUp and render index.html
           bash build.sh
           # Dist
