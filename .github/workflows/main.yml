@@ -30,7 +30,7 @@ jobs:
           ./build.sh
    
       - name: Upload
-        run:
+        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add docs
