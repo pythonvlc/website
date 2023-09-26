@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: |
           # Get data from MeetUp and render index.html
-          bash build.sh
+          ./build.sh
           # Dist
           mv dist public
         env:
