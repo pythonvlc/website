@@ -10,8 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
       
     steps:
       - uses: actions/checkout@v2
@@ -30,3 +28,5 @@ jobs:
           bash build.sh
           # Dist
           mv dist public
+        env:
+          MEETUP_COOKIES: "${{ secrets.MEETUP_COOKIES }}"
