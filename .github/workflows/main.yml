@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      MEETUP_COOKIES: ${{ vars.MEETUP_COOKIES }}
 
     steps:
       - uses: actions/checkout@v2
@@ -26,8 +28,6 @@ jobs:
           
       - name: Build
         run: |
-          # Set envs
-          export MEETUP_COOKIES=${{ env.MEETUP_COOKIES }}
           # Get data from MeetUp and render index.html
           bash build.sh
           # Dist
