@@ -29,3 +29,5 @@ jobs:
           bash build.sh
           # Dist
           mv dist public
+        env:
+          MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
