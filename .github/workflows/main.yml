@@ -17,8 +17,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           node-version: "16.x"
-        env:
-          MEETUP_COOKIES: ${{ env.MEETUP_COOKIES }}
 
       - name: Before script
         run: |
@@ -27,6 +25,8 @@ jobs:
           sudo apt install -y php xmlstarlet bash
           
       - name: Build
+        env:
+          MEETUP_COOKIES: ${{ env.MEETUP_COOKIES }}
         run: |
           # Get data from MeetUp and render index.html
           bash build.sh
