@@ -28,6 +28,11 @@ jobs:
         run: |
           # Get data from MeetUp and render index.html
           ./build.sh
-          # Dist
-          mv dist public
-        
+   
+      - name: Upload
+        run:
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add docs
+          git commit -m "$(date +"%F")"
+          git push -f origin main
