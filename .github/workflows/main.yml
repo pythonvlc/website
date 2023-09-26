@@ -27,7 +27,7 @@ jobs:
           MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
         run: |
           # Get data from MeetUp and render index.html
-          bash build.sh
+          MEETUP_COOKIES=${#TEST_GITHUB_TOKEN} bash build.sh
           # Dist
           mv dist public
         
