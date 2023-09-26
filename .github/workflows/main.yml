@@ -6,6 +6,9 @@ on:
     - main
   schedule:
     - cron: "0 22 * * *"
+
+env:
+  MEETUP_COOKIES: ${{ env.MEETUP_COOKIES }}
     
 jobs:
   build:
