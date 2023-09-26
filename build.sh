@@ -49,13 +49,23 @@ render_html() {
 
     # Make new index.html with the new data
     php "$file_index" -- "title=$1&link=$2&url_image=$3&description=$4&datetime=$5&date_format=$6&hour_format=$7" > "$file_output"
+}
 
+build_static_site() {
     # Compile Parcel
     npm run build
 }
 
+configure_github_pages() {
+    # Set domain
+    rm -rf docs/CNAME
+    echo "python-valencia.es" > docs/CNAME
+}
+
 start() {
     get_last_event
+    build_static_site
+    configure_github_pages
 }
 
 # VARIABLES
