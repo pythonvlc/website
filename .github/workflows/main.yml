@@ -31,8 +31,8 @@ jobs:
    
       - name: Upload
         run:
-          git config user.email "action@github.com"
-          git config user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add docs
           git commit -m "$(date +"%F")"
           git push -f origin main
