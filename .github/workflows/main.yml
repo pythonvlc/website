@@ -1,4 +1,4 @@
-name: Check
+name: CI
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
           MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
         run: |
           # Get data from MeetUp and render index.html
-          MEETUP_COOKIES=${#MEETUP_COOKIES} bash build.sh
+          ./build.sh
           # Dist
           mv dist public
         
