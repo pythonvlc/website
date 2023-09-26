@@ -76,10 +76,4 @@ URL_PAST_EVENTS="https://www.meetup.com/es-ES/python-valencia-meetup/events/past
 
 # MAIN
 
-# Check if exist cookies env variable
-if [ -z "$MEETUP_COOKIES" ]; then
-  echo "MEETUP_COOKIES env variable is not set. Please set it with the cookies value from MeetUp."
-  exit 1
-else
-    start
-fi
+start
