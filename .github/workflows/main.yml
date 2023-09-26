@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
+      
     steps:
       - uses: actions/checkout@v2
         with:
@@ -25,10 +26,7 @@ jobs:
           
       - name: Build
         run: |
-          echo "MEETUP_COOKIES=${{ secrets.MEETUP_COOKIES }}" >> $GITHUB_ENV
           # Get data from MeetUp and render index.html
           ./build.sh
           # Dist
           mv dist public
-        env:
-          MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
