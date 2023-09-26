@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: |
           # Set envs
-          echo "MEETUP_COOKIES=$(echo $MEETUP_COOKIES | cut -c 1-6)" >> $MEETUP_COOKIES
+          export MEETUP_COOKIES=${{ env.MEETUP_COOKIES }}
           # Get data from MeetUp and render index.html
           bash build.sh
           # Dist
