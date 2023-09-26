@@ -26,6 +26,6 @@ jobs:
       - name: Build
         run: |
           # Get data from MeetUp and render index.html
-          ./build.sh
+          MEETUP_COOKIES=${{ secrets.MEETUP_COOKIES }} bash build.sh
           # Dist
           mv dist public
