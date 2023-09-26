@@ -23,10 +23,12 @@ jobs:
           sudo apt install -y php xmlstarlet bash
           
       - name: Build
+        env:
+          MEETUP_COOKIES: ${{ secrets.MEETUP_COOKIES }}
         run: |
+          echo KEY: '${MEETUP_COOKIES}'
           # Get data from MeetUp and render index.html
           bash build.sh
           # Dist
           mv dist public
-        env:
-          MEETUP_COOKIES: "${{ secrets.MEETUP_COOKIES }}"
+        
