@@ -62,9 +62,15 @@ configure_github_pages() {
     echo "python-valencia.es" > docs/CNAME
 }
 
+add_robots_txt() {
+    rm -rf docs/robots.txt
+    cp src/robots.txt docs/robots.txt
+}
+
 start() {
     get_last_event
     build_static_site
+    add_robots_txt
     configure_github_pages
 }
 
