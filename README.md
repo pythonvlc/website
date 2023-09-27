@@ -2,13 +2,13 @@
 
 🇪🇸 Esta página es un sitio estático para el grupo local de Python Valencia. El HTML se genera usando el motor de plantillas de PHP, mientras que el compilado de SASS junto a las optimizaciones las gestiona Parcel.
 
-La web esta alojada en GitLab Pages, en este mismo repositorio.
+La web esta alojada en GitHub Pages, en este mismo repositorio.
 
 Revisa la guia de colaboración antes de hacer Merge Request.
 
 🇬🇧 This page is a static site for the local Python Valencia. The HTML is generated using the PHP template engine, while the SASS compilation and optimisations are handled by Parcel.
 
-The website is hosted on GitLab Pages, in this repository.
+The website is hosted on GitHub Pages, in this repository.
 
 Check the collaboration guide before making Merge Request.
 
