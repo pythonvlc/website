@@ -52,7 +52,7 @@ export MEETUP_COOKIES="MEETUP_BROWSER_ID=id=20d2693f-6..."
 bash build.sh
 ```
 
-The files needed to deploy will have been generated in `dist` folder.
+The files needed to deploy will have been generated in `docs` folder.
 
 ## Collaboration Guide
 
