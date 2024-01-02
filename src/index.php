@@ -119,27 +119,16 @@
         </div>
       </section>
       <!-- Colaboradores -->
-      <section class="partners">
-        <div class="container">
-          <h2 class="partners__title text--title--s text--align-center">Conoce nuestros colaboradores</h2>
-          <ul class="partners__list">
-            <li class="partners__item">
-              <a href="https://ccstech.io/" target="_blank" class="partners__link">
-                <img class="partners__image partners__image--ccstechio" alt="CCSTech.io" src="assets/img/partners/ccstech.svg"/>
-              </a>
-            </li>
-            <li class="partners__item">
-              <a href="https://idecrea.es/" target="_blank" class="partners__link">
-                <img class="partners__image partners__image--idecrea" alt="Idecrea" src="assets/img/partners/idecrea.svg"/>
-              </a>
-            </li>
-            <li class="partners__item">
-              <a href="https://wayco.es" target="_blank" class="partners__link">
-                <img class="partners__image partners__image--wayco" alt="WayCo" src="assets/img/partners/wayco.svg"/>
-              </a>
-            </li>
-          </ul>
-        </div>
+      <section class="partners container">
+        <h2 class="partners__title text--title--s text--align-center">Entidades que también colaboran con Python Vallencia</h2>
+        <nav class="partners__list">
+          <a href="https://idecrea.es/" target="_blank" class="partners__link">
+            <img class="partners__image partners__image--idecrea" alt="Idecrea" src="assets/img/partners/idecrea.svg"/>
+          </a>
+          <a href="https://wayco.es" target="_blank" class="partners__link">
+            <img class="partners__image partners__image--wayco" alt="WayCo" src="assets/img/partners/wayco.svg"/>
+          </a>
+        </nav>
       </section>
       <!-- Ventajas de pertenecer a la comunidad -->
       <section class="pros">
