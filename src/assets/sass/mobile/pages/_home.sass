@@ -198,7 +198,7 @@
 .partners
   display: grid
   margin-top: $gap--xxl
-  row-gap: $gap--m
+  row-gap: $gap--l
 
   &__list
     display: flex
@@ -213,8 +213,8 @@
     align-items: center
     width: 100%
     min-width: 9rem
-    max-width: 12rem
-    height: 4.5rem
+    max-width: 15rem
+    height: 5rem
     opacity: .8
     transition: $transition--main
 
@@ -240,9 +240,54 @@
 .code-of-conduct
   margin-top: $gap--xxl
   background-color: $color--grey
-  padding:
-    top: $gap--xxl
-    bottom: $gap--xxl
+  padding-block: $gap--xxl
+
+  div
+
+    & > h2
+      margin-bottom: $gap--s
+
+    & > h3
+      margin-top: $gap--m
+
+    & > p
+      margin-top: $gap--xxs
+
+    & > ul
+      margin-block: $gap--s
+
+      & > li
+        position: relative
+        margin-top: $gap--xxs
+        padding-left: $gap--m
+
+        &::before
+          content: '\e803'
+          font-family: 'pyvlc-icons'
+          font-size: .7rem
+          position: absolute
+          top: .2rem
+          left: 0
+
+  &__more-content
+    transition: $transition--slow
+
+  &__more-button
+    background-color: unset
+    border: unset
+    padding: unset
+    margin-top: $gap--m
+    transition: $transition--main
+
+    &::before
+      height: 2px
+      background-color: $color--black
+
+    &:hover
+      color: $color--orange
+
+      &::before
+        background-color: $color--orange
 
 // Newsletter
 .newsletter

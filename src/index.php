@@ -214,65 +214,100 @@
         </a>
       </section>
       <!-- Código de conducta -->
-      <section id="codigo-de-conducta" class="container code-of-conduct">
-        <h2 class="text--title--m">Código de conducta</h2>
-        <p>Python Valencia es un grupo de entusiastas de Python dedicado a la organización de eventos de distintos tipos, que busca asegurar que todas las personas que participen en dichos eventos o comunicaciones tengan una experiencia positiva de aprendizaje, colaboración y ocio.</p>
-        <p>La comunidad está formada por miembros con un conjunto diverso de habilidades, personalidades y experiencias. Es a través de estas diferencias que nuestra comunidad experimenta grandes éxitos y un crecimiento continuo.</p>
-        <p>Cuando interactúe con miembros de la comunidad, este Código de conducta le ayudará a dirigir sus interacciones y a mantener a Python como una comunidad positiva, exitosa y en crecimiento. Para ello, se espera que quien participe en la comunidad muestre respeto y cortesía hacia el resto.</p>
-        <h3>Nuestra comunidad</h3>
-        <p>Los miembros de la comunidad Python son <strong>abiertos, considerados y respetuosos</strong> . Los comportamientos que refuerzan estos valores contribuyen a un ambiente positivo e incluyen:</p>
-        <ul>
-          <li><p><strong>Estar abierto.</strong></p>
-            <p>  Los miembros de la comunidad están abiertos a la colaboración a fin de hacer crecer nuestra comunidad. Toda ayuda es bienvenida y ninguna idea carece de valor.</p>
-          </li>
-          <li><p><strong>Centrándose en lo que es mejor para la comunidad.</strong></p>
-            <p>  Somos respetuosos de los procesos establecidos en la comunidad y trabajamos dentro de ellos.</p>
-          </li>
-          <li><p><strong>Reconociendo el tiempo y el esfuerzo.</strong></p>
-            <p>  Respetamos los esfuerzos voluntarios que impregnan la comunidad Python. Somos reflexivos al abordar los esfuerzos de los demás, teniendo en cuenta que muchas veces el trabajo se completó simplemente por el bien de la comunidad.</p>
-          </li>
-          <li><p><strong>Ser respetuoso de los diferentes puntos de vista y experiencias.</strong></p>
-            <p>  Somos receptivos a comentarios y críticas constructivas, ya que las experiencias y habilidades de otros miembros contribuyen a todos nuestros esfuerzos.</p>
-          </li>
-          <li><p><strong>Mostrar empatía hacia otros miembros de la comunidad.</strong></p>
-            <p>  Estamos atentos en nuestras comunicaciones, ya sea en persona o en línea, y tenemos tacto al abordar puntos de vista diferentes.</p>
-          </li>
-          <li><p><strong>Ser considerado.</strong></p>
-            <p>  Los miembros de la comunidad son considerados con sus pares: otros usuarios de Python.</p>
-          </li>
-          <li><p><strong>Ser respetuoso.</strong></p>
-            <p>  Respetamos a los demás, sus posiciones, sus habilidades, sus compromisos y sus esfuerzos.</p>
-          </li>
-          <li><p><strong>Aceptar con gracia las críticas constructivas.</strong></p>
-            <p>  Cuando no estamos de acuerdo, somos corteses al plantear nuestros problemas.</p>
-          </li>
-          <li><p><strong>Utilizar un lenguaje acogedor e inclusivo.</strong></p>
-            <p>  Aceptamos a todos los que deseen participar en nuestras actividades, fomentando un ambiente donde cualquiera puede participar y todos pueden marcar la diferencia.</p>
-          </li>
-        </ul>
-        <h3>Alcance</h3>
-        <p>Este código de conducta es aplicable a todas las personas que participen en espacios de la comunidad de Python Valencia, ya sean en línea o presenciales. También se aplica a espacios públicos donde una persona esté en representación de la comunidad. Ejemplos de esto último incluyen el uso de la cuenta oficial de correo electrónico, publicaciones a través de las redes sociales oficiales, o presentaciones con personas designadas en eventos en línea o no.</p>
-        <h3>Nuestros estándares</h3>
-        <p>Todo miembro de nuestra comunidad tiene derecho a que se respete su identidad. La comunidad Python Valencia se dedica a brindar una experiencia positiva para todos, independientemente de su edad, identidad y expresión de género, orientación sexual, discapacidad, apariencia física, tamaño corporal, origen étnico, nacionalidad, raza o religión (o falta de ella), educación o Estatus socioeconómico.</p>
-        <h3>Comportamiento inapropiado</h3>
-        <p>Ejemplos de comportamiento inaceptable por parte de los participantes incluyen:</p>
-        <ul>
-          <li>El uso de lenguaje o imágenes sexualizadas, y aproximaciones o atenciones sexuales de cualquier tipo</li>
-          <li>Comentarios despectivos (<em>trolling</em>), insultantes o derogatorios, y ataques personales o políticos</li>
-          <li>Bromas racistas, sexistas o excluyentes</li>
-          <li>El acoso en público o privado</li>
-          <li>Publicar información privada de otras personas, tales como direcciones físicas o de correo electrónico, sin su permiso explícito</li>
-          <li>Otras conductas que puedan ser razonablemente consideradas como inapropiadas en un entorno profesional</li>
-        </ul>
-        <p>Por acoso se entiende comentarios ofensivos relacionados con género, orientación sexual, discapacidad, apariencia física, tamaño corporal, etnia o religión, pornografía en espacios públicos, intimidación deliberada, acecho, persecución, acoso por fotografías o grabaciones, constante interrupción de charlas u otros eventos, contacto físico inapropiado y atención sexual no deseada.</p>
-        <p>Se espera que los miembros de la comunidad a los que se les pide que pongan fin a cualquier comportamiento inapropiado cumplan de inmediato.</p>
-        <h3>Cumplimiento</h3>
-        <p>La administración de la comunidad es responsable de aclarar y hacer cumplir este código de conducta; en caso de que se determine un comportamiento inadecuado, tomará las acciones que considere oportunas. Éstas van desde exigir el cese del comportamiento, hasta la expulsión de una persona de un evento o de la comunidad, sin derecho a reembolso/compensación de cualquier aportación. La administración de la comunidad tendrá el derecho y la responsabilidad de eliminar, editar o rechazar mensajes, comentarios, <em>commits</em>, código, ediciones de páginas de wiki, tickets y otras contribuciones que no se alineen con este código de conducta, y comunicará las razones para sus decisiones de moderación cuando sea apropiado.</p>
-        <h3>Información del contacto</h3>
-        <p>Si cree que alguien está violando el código de conducta o tiene alguna otra inquietud, comuníquese de inmediato enviando un correo electrónico a <a href="mailto:valencia@es.python.org">valencia@es.python.org</a> o acuda a cualquier miembro organizador durante el transcurso de nuestros eventos.</p>
-        <p>Todas las personas organizadoras de la comunidad están obligadas a respetar la privacidad y la seguridad de quienes denuncien incidentes.</p>
-        <h3><strong>Atribuciones</strong></h3>
-        <p>Este código de conducta extiende del código de conducta de la <a href="https://www.python.org/psf/conduct/">Python Software Foundation</a> y del de la asociación de <a href="https://github.com/python-spain/documentacion/blob/master/codigo-conducta.rst">Python España</a>.</p>
+      <section id="codigo-de-conducta" class="code-of-conduct">
+        <div class="container">
+          <h2 class="text--title--m">Código de conducta</h2>
+          <p>Python Valencia es un grupo de entusiastas de Python dedicado a la organización de eventos de distintos tipos, que busca asegurar que todas las personas que participen en dichos eventos o comunicaciones tengan una experiencia positiva de aprendizaje, colaboración y ocio.</p>
+          <p>La comunidad está formada por miembros con un conjunto diverso de habilidades, personalidades y experiencias. Es a través de estas diferencias que nuestra comunidad experimenta grandes éxitos y un crecimiento continuo.</p>
+          <p>Cuando interactúe con miembros de la comunidad, este Código de conducta le ayudará a dirigir sus interacciones y a mantener a Python como una comunidad positiva, exitosa y en crecimiento. Para ello, se espera que quien participe en la comunidad muestre respeto y cortesía hacia el resto.</p>
+        </div>
+        <div
+          id="conduct-content"
+          class="container code-of-conduct__more-content"
+          style="height: 0; overflow: hidden;"
+        >
+          <h3>Nuestra comunidad</h3>
+          <p>Los miembros de la comunidad Python son <strong class="text--medium">abiertos, considerados y respetuosos</strong> . Los comportamientos que refuerzan estos valores contribuyen a un ambiente positivo e incluyen:</p>
+          <ul>
+            <li>
+              <p><strong class="text--medium">Estar abierto.</strong></p>
+              <p>Los miembros de la comunidad están abiertos a la colaboración a fin de hacer crecer nuestra comunidad. Toda ayuda es bienvenida y ninguna idea carece de valor.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Centrándose en lo que es mejor para la comunidad.</strong></p>
+              <p>Somos respetuosos de los procesos establecidos en la comunidad y trabajamos dentro de ellos.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Reconociendo el tiempo y el esfuerzo.</strong></p>
+              <p>Respetamos los esfuerzos voluntarios que impregnan la comunidad Python. Somos reflexivos al abordar los esfuerzos de los demás, teniendo en cuenta que muchas veces el trabajo se completó simplemente por el bien de la comunidad.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Ser respetuoso de los diferentes puntos de vista y experiencias.</strong></p>
+              <p>Somos receptivos a comentarios y críticas constructivas, ya que las experiencias y habilidades de otros miembros contribuyen a todos nuestros esfuerzos.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Mostrar empatía hacia otros miembros de la comunidad.</strong></p>
+              <p>Estamos atentos en nuestras comunicaciones, ya sea en persona o en línea, y tenemos tacto al abordar puntos de vista diferentes.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Ser considerado.</strong></p>
+              <p>Los miembros de la comunidad son considerados con sus pares: otros usuarios de Python.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Ser respetuoso.</strong></p>
+              <p>Respetamos a los demás, sus posiciones, sus habilidades, sus compromisos y sus esfuerzos.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Aceptar con gracia las críticas constructivas.</strong></p>
+              <p>Cuando no estamos de acuerdo, somos corteses al plantear nuestros problemas.</p>
+            </li>
+            <li>
+              <p><strong class="text--medium">Utilizar un lenguaje acogedor e inclusivo.</strong></p>
+              <p>Aceptamos a todos los que deseen participar en nuestras actividades, fomentando un ambiente donde cualquiera puede participar y todos pueden marcar la diferencia.</p>
+            </li>
+          </ul>
+          <h3 class="text--title--s">Alcance</h3>
+          <p>Este código de conducta es aplicable a todas las personas que participen en espacios de la comunidad de Python Valencia, ya sean en línea o presenciales. También se aplica a espacios públicos donde una persona esté en representación de la comunidad. Ejemplos de esto último incluyen el uso de la cuenta oficial de correo electrónico, publicaciones a través de las redes sociales oficiales, o presentaciones con personas designadas en eventos en línea o no.</p>
+          <h3 class="text--title--s">Nuestros estándares</h3>
+          <p>Todo miembro de nuestra comunidad tiene derecho a que se respete su identidad. La comunidad Python Valencia se dedica a brindar una experiencia positiva para todos, independientemente de su edad, identidad y expresión de género, orientación sexual, discapacidad, apariencia física, tamaño corporal, origen étnico, nacionalidad, raza o religión (o falta de ella), educación o Estatus socioeconómico.</p>
+          <h3 class="text--title--s">Comportamiento inapropiado</h3>
+          <p>Ejemplos de comportamiento inaceptable por parte de los participantes incluyen:</p>
+          <ul>
+            <li>El uso de lenguaje o imágenes sexualizadas, y aproximaciones o atenciones sexuales de cualquier tipo</li>
+            <li>Comentarios despectivos (<em>trolling</em>), insultantes o derogatorios, y ataques personales o políticos</li>
+            <li>Bromas racistas, sexistas o excluyentes</li>
+            <li>El acoso en público o privado</li>
+            <li>Publicar información privada de otras personas, tales como direcciones físicas o de correo electrónico, sin su permiso explícito</li>
+            <li>Otras conductas que puedan ser razonablemente consideradas como inapropiadas en un entorno profesional</li>
+          </ul>
+          <p>Por acoso se entiende comentarios ofensivos relacionados con género, orientación sexual, discapacidad, apariencia física, tamaño corporal, etnia o religión, pornografía en espacios públicos, intimidación deliberada, acecho, persecución, acoso por fotografías o grabaciones, constante interrupción de charlas u otros eventos, contacto físico inapropiado y atención sexual no deseada.</p>
+          <p>Se espera que los miembros de la comunidad a los que se les pide que pongan fin a cualquier comportamiento inapropiado cumplan de inmediato.</p>
+          <h3 class="text--title--s">Cumplimiento</h3>
+          <p>La administración de la comunidad es responsable de aclarar y hacer cumplir este código de conducta; en caso de que se determine un comportamiento inadecuado, tomará las acciones que considere oportunas. Éstas van desde exigir el cese del comportamiento, hasta la expulsión de una persona de un evento o de la comunidad, sin derecho a reembolso/compensación de cualquier aportación. La administración de la comunidad tendrá el derecho y la responsabilidad de eliminar, editar o rechazar mensajes, comentarios, <em>commits</em>, código, ediciones de páginas de wiki, tickets y otras contribuciones que no se alineen con este código de conducta, y comunicará las razones para sus decisiones de moderación cuando sea apropiado.</p>
+          <h3 class="text--title--s">Información del contacto</h3>
+          <p>Si cree que alguien está violando el código de conducta o tiene alguna otra inquietud, comuníquese de inmediato enviando un correo electrónico a <a
+            href="mailto:valencia@es.python.org"
+            class="text--link--main"
+          >valencia@es.python.org</a> o acuda a cualquier miembro organizador durante el transcurso de nuestros eventos.</p>
+          <p>Todas las personas organizadoras de la comunidad están obligadas a respetar la privacidad y la seguridad de quienes denuncien incidentes.</p>
+          <h3><strong class="text--title--s">Atribuciones</strong></h3>
+          <p>Este código de conducta extiende del código de conducta de la <a
+            href="https://www.python.org/psf/conduct/"
+            target="_blank"
+            class="text--link--main"
+          >Python Software Foundation</a> y del de la asociación de <a
+            href="https://github.com/python-spain/documentacion/blob/master/codigo-conducta.rst"
+            target="_blank"
+            class="text--link--main"
+          >Python España</a>.</p>
+        </div>
+        <div class="container">
+          <button
+            id="conduct-read-more"
+            type="button"
+            class="text--body--m text--medium code-of-conduct__more-button text--link--highlight"
+          >Leer más</button>
+        </div>
       </section>
       <!-- Contacta -->
       <nav class="contact scroll-to" id="contact">
@@ -319,16 +354,10 @@
         <p class="text--body--s">
           Desarrollado por
           <a
-            href="https://ccstech.io"
+            href="https://python-valencia.es"
             target="_blank"
             class="text--link--main"
-          >CCSTech.io</a>
-          - Alojado por
-          <a
-            href="https://ccsolutions.io"
-            target="_blank"
-            class="text--link--main"
-          >CCSolutions.io</a>
+          >Python Valencia</a>
           - Con la ayuda de
           <a
             href="https://idecrea.es"
