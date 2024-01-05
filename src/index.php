@@ -200,19 +200,6 @@
           </div>
         </div>
       </section>
-      <!-- Newsletter -->
-      <section class="newsletter container" id="newsletter">
-        <a
-          href="https://buttondown.email/python-valencia"
-          target="_blank"
-          class="newsletter__content"
-        >
-          <h2 class="text--title--m">Newsletter</h2>
-          <h3 class="text--title--s">¿Quieres estar al tanto de las novedades y próximos eventos?</h3>
-          <p>Suscríbete para recibir una vez al mes toda la información.</p>
-          <p class="newsletter__content--button label white">Suscribirme <i class="icon-right-arrow"></i></p>
-        </a>
-      </section>
       <!-- Código de conducta -->
       <section id="codigo-de-conducta" class="code-of-conduct">
         <div class="container">
