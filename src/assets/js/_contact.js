@@ -65,13 +65,6 @@ function range(start, end) {
   );
 };
 
-/*const resizeObserver = new ResizeObserver((entries) => {
-  console.log(entries)
-  stopInterval();
-  startAnimation();
-});
-resizeObserver.observe(contactTitleContainer);*/
-
 function debounce(func){
   let timer;
   return function(event){
