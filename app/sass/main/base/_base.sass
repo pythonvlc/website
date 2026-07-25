@@ -1,0 +1,51 @@
+html
+  scroll-behavior: smooth
+
+body
+  color: $color--ink
+  font-family: "text", sans-serif
+  font-weight: 400
+  background-color: $color--white
+
+.container
+  box-sizing: border-box
+  max-width: calc(#{$container--main} + var(--gap--m) * 2)
+  margin:
+    left: auto
+    right: auto
+  padding:
+    left: var(--gap--m)
+    right: var(--gap--m)
+
+.container--wide
+  box-sizing: border-box
+  max-width: calc(#{$container--wide} + var(--gap--m) * 2)
+  margin:
+    left: auto
+    right: auto
+  padding:
+    left: var(--gap--m)
+    right: var(--gap--m)
+
+.scroll-to
+  position: relative
+
+  &__element
+    position: absolute
+    bottom: 100%
+    display: block
+    height: $gap--xl
+
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  white-space: nowrap
+  border: 0
+
+.body-scroll-lock
+  overflow: hidden

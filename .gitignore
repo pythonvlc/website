@@ -1,9 +1,11 @@
-.parcel-cache/
-dist/
-docs/
+.env
+
+__pycache__/
+.pytest_cache/
+.ruff_cache/
 
 node_modules/
-package-lock.json
 
 .DS_Store
-/src/index.html
+.playwright-mcp/
+.agent-shell/

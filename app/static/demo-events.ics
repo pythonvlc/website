@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Demo//Python Valencia//EN
+BEGIN:VEVENT
+DTSTAMP:20261101T000000Z
+DTSTART;TZID=Europe/Madrid:20261130T183000
+SUMMARY:Principios básicos para hacer un buen diseño de visualización
+  de datos
+LOCATION:WayCO Cabanyal - Carrer de Marià Cuber\, 17\, 46011 València\,
+  Valencia
+URL:https://www.meetup.com/python-valencia-meetup/events/demo/
+END:VEVENT
+END:VCALENDAR

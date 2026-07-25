@@ -1,58 +1,36 @@
 # Python Valencia Page
 
-🇪🇸 Esta página es un sitio estático para el grupo local de Python Valencia. El HTML se genera usando el motor de plantillas de PHP, mientras que el compilado de SASS junto a las optimizaciones las gestiona Parcel.
+🇪🇸 Web del grupo local de Python Valencia. Es una aplicación Flask con dos partes dinámicas: el año del pie de página y la caja de "Próximo evento", que se alimenta del calendario ICS público de Meetup y solo aparece cuando hay un evento anunciado. Todas las fotos se sirven a través de [imagor](https://github.com/cshum/imagor) con URLs firmadas, así no hace falta optimizarlas a mano.
 
-La web esta alojada en GitHub Pages, en este mismo repositorio.
+🇬🇧 Website of the Python Valencia local group. It is a Flask application with two dynamic parts: the footer year and the "Next event" box, fed from the public Meetup ICS calendar and only shown when an event is announced. Every photo is served through [imagor](https://github.com/cshum/imagor) with signed URLs, so there is no need to optimise them by hand.
 
-Revisa la guia de colaboración antes de hacer Merge Request.
+## Run
 
-🇬🇧 This page is a static site for the local Python Valencia. The HTML is generated using the PHP template engine, while the SASS compilation and optimisations are handled by Parcel.
-
-The website is hosted on GitHub Pages, in this repository.
-
-Check the collaboration guide before making Merge Request.
-
-## Install
-
-1. Install `npm`.
-
-Example in Debian/Ubuntu.
+1. Copy the environment file and adjust it (`PORT` is the only public port; set a long random `IMAGOR_SECRET`).
 
 ```sh
-sudo apt install npm
+cp .env.example .env
 ```
 
-2. Install the necessary node dependencies. It is used to compile SASS.
+2. Start everything with Docker Compose.
 
 ```sh
-npm i
+docker compose up --build
 ```
 
-3. Install `xmlstarlet`. It is used to get dynamic data from the MeetUp and build the page.
+The site is served at `http://localhost:${PORT}`.
 
-Example in Debian/Ubuntu.
+## Architecture
+
+- `nginx`: single entry point. Routes `/img/` to imagor and everything else to Flask.
+- `web`: Flask + gunicorn. Renders the page, reads the Meetup ICS feed (cached), and signs imagor URLs with `IMAGOR_SECRET` (HMAC-SHA256). The compiled CSS is built from SASS in the Docker image (dart-sass stage).
+- `imagor`: processes and caches the images. Sources: the local `app/static/img` folder (read-only mount) and `secure.meetupstatic.com` for event covers.
+
+## Tests
 
 ```sh
-sudo apt install xmlstarlet
+docker compose run --rm --entrypoint sh web -c "pip install pytest -q && pytest tests -q"
 ```
-
-## Build
-
-1. Sets the `MEETUP_COOKIES` environment variable with the cookies for a MeetUp session. It is used to access the RSS feed.
-
-```sh
-export MEETUP_COOKIES="MEETUP_BROWSER_ID=id=20d2693f-6..."
-```
-
-2. Create an image for the cover (Optional): `src/assets/talks/cover.webp`.
-
-3. Generate `index.html`.
-
-```sh
-bash build.sh
-```
-
-The files needed to deploy will have been generated in `docs` folder.
 
 ## Collaboration Guide
 

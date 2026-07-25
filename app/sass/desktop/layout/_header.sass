@@ -1,0 +1,22 @@
+.header
+
+  &__bar
+    height: 5rem
+    justify-content: flex-end
+    gap: $gap--m
+
+  &__nav--list
+    display: flex
+    align-items: center
+    gap: $gap--m
+    font-size: .875rem
+    color: $color--white
+    transition: $transition--main
+
+  &__bar > .header__contact
+    margin-left: $gap--m
+
+  &.main
+
+    .header__nav--list
+      color: $color--ink

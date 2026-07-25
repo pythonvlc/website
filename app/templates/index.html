@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Python Valencia</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicons/favicon.webp') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/favicons/touch-icon-iphone.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='img/favicons/touch-icon-ipad.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicons/touch-icon-iphone-retina.png') }}">
+    <link rel="apple-touch-icon" sizes="167x167" href="{{ url_for('static', filename='img/favicons/touch-icon-ipad-retina.png') }}">
+    <meta name="theme-color" content="#252525">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="Python Valencia">
+    <meta name="keywords" content="python">
+    <meta name="description" content="¡Hola Valencia! Grupo local de Python donde entusiastas del lenguaje nos reunimos para compartir nuestros conocimientos en charlas y talleres. Es gratis, como el buen código.">
+    <meta name="twitter:card" content="Python Valencia">
+    <meta name="twitter:site" content="@python_vlc">
+    <meta property="og:image" content="{{ url_for('static', filename='img/python-valencia-rrss.jpg') }}">
+    <meta property="og:title" content="Python Valencia">
+    <meta property="og:type" content="website">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:alt" content="Logo de Python Valencia">
+    <link rel="stylesheet" type="text/css" media="all and (min-width: 901px)" href="{{ url_for('static', filename='css/desktop.css') }}">
+    <link rel="stylesheet" type="text/css" media="all and (max-width: 900px)" href="{{ url_for('static', filename='css/mobile.css') }}">
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="header__bar container">
+        <!-- Botón menú móvil -->
+        <button id="menu-button" class="header__button mobile-view" aria-label="Abrir/cerrar menú">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <!-- Menú -->
+        <nav id="menu" class="header__nav">
+          <a href="#inicio" class="mobile-view header__nav--logo to-start">
+            <img src="{{ url_for('static', filename='img/logo-python-valencia.webp') }}" alt="Inicio">
+          </a>
+          <ul class="header__nav--list">
+            {% if event %}
+            <li><a href="#proximo-evento" class="text--link--highlight">Eventos</a></li>
+            {% endif %}
+            <li><a href="#quienes-somos" class="text--link--highlight">Quiénes somos</a></li>
+            <li><a href="#socios" class="text--link--highlight">Socios</a></li>
+            <li class="mobile-view"><a href="#colabora" class="text--link--highlight">Colaborar con PyVlc</a></li>
+            <li><a href="#preguntas-frecuentes" class="text--link--highlight">Preguntas frecuentes</a></li>
+            <li><a href="#codigo-de-conducta" class="text--link--highlight">Código de conducta</a></li>
+            <li class="mobile-view"><a href="#contacto" class="header__contact">Contacto</a></li>
+          </ul>
+        </nav>
+        <a href="#contacto" class="header__contact header__contact--bar">Contacto</a>
+      </div>
+    </header>
+    <main>
+      <!-- Hero -->
+      <section id="inicio" class="hero">
+        <img
+          src="{{ img('hero.jpg', size='fit-in/1920x0') }}"
+          alt="Charla en un evento de Python Valencia"
+          class="hero__photo"
+        >
+        <div class="hero__heading container">
+          <img
+            src="{{ url_for('static', filename='img/logo-python-valencia.webp') }}"
+            alt=""
+            aria-hidden="true"
+            class="hero__logo"
+          >
+          <h1 class="hero__title">Python Valencia</h1>
+        </div>
+      </section>
+      {% if event %}
+      <!-- Próximo evento -->
+      <section class="event container scroll-to">
+        <span id="proximo-evento" class="scroll-to__element" aria-hidden="true"></span>
+        <div class="event__box">
+          <div class="event__info">
+            <h2 class="text--title--m">Próximo evento</h2>
+            <p class="event__title">
+              <a href="{{ event.url }}" target="_blank">{{ event.title }}</a>
+            </p>
+            <p class="event__chips">
+              <span class="event__chip">{{ event.date }}</span>
+              <span class="event__chip">{{ event.time }}</span>
+            </p>
+            {% if event.location %}
+            <p class="event__chips">
+              <span class="event__chip">{{ event.location }}</span>
+            </p>
+            {% endif %}
+          </div>
+          <figure class="event__photo">
+            <a href="{{ event.url }}" target="_blank">
+              {% if event.image %}
+              <img src="{{ img(event.image, size='820x730', smart=True, grayscale=True, external=True) }}" alt="Cartel del evento">
+              {% else %}
+              <img src="{{ img('evento-fallback.jpg', size='820x730', grayscale=True) }}" alt="">
+              {% endif %}
+            </a>
+            <figcaption class="event__label">{{ event.kind }}</figcaption>
+          </figure>
+        </div>
+      </section>
+      {% endif %}
+      <!-- Quiénes somos -->
+      <section class="community container scroll-to">
+        <span id="quienes-somos" class="scroll-to__element" aria-hidden="true"></span>
+        <figure class="community__photo">
+          <img src="{{ img('foto-comunidad.jpg', size='800x800') }}" alt="Miembros de la comunidad Python Valencia">
+        </figure>
+        <div class="community__info">
+          <h3 class="text--title--xs">Quiénes somos</h3>
+          <h2 class="text--title--m">La comunidad de Python Valencia</h2>
+          <p class="text--body--l">Es un grupo de enamorados de la programación, buenas prácticas y arquitecturas que se dedican a compartir sus conocimientos sobre el lenguaje de la pitón que más nos gusta.</p>
+        </div>
+      </section>
+      <!-- Socios -->
+      <section class="members container scroll-to">
+        <span id="socios" class="scroll-to__element" aria-hidden="true"></span>
+        <div class="members__intro">
+          <h2 class="text--title--m">Socios</h2>
+          <p class="members__intro--text">Tal vez te interese dar una charla sobre Python o te gustaría estar al tanto de eventos. Sea cual sea tu interés, estaremos encantados de recibirte.</p>
+        </div>
+        <ul class="members__list">
+          <li class="members__card">
+            <h3 class="members__card--name">Fran Trapero</h3>
+          </li>
+          <li class="members__card">
+            <h3 class="members__card--name">Javier Nicolás Pérez</h3>
+          </li>
+          <li class="members__card">
+            <h3 class="members__card--name">Andros Fenollosa</h3>
+          </li>
+          <li class="members__card">
+            <h3 class="members__card--name">Dmitry Alimov</h3>
+          </li>
+          <li class="members__card">
+            <h3 class="members__card--name">Hian Cañizares</h3>
+          </li>
+          <li class="members__card">
+            <h3 class="members__card--name">Héctor Orón</h3>
+          </li>
+          <li class="members__card">
+            <h3 class="members__card--name">Julio Martínez</h3>
+          </li>
+          <li class="members__join">
+            <div class="members__join--card">
+              <p class="members__join--question">¿Quieres ser socio?</p>
+              <a href="mailto:valencia@es.python.org" class="button">Únete a Python Valencia <span aria-hidden="true">⟶</span></a>
+            </div>
+            <p class="members__join--note">Si quieres más información puedes mandar un correo a <strong>valencia@es.python.org</strong></p>
+          </li>
+        </ul>
+      </section>
+      <!-- Ventajas de pertenecer a la comunidad -->
+      <section class="pros">
+        <div class="pros__all container">
+          <div class="pros__info">
+            <h2 class="text--title--m">Ventajas de pertenecer a la comunidad</h2>
+            <p>Al estar en contacto directo con otros miembros de la comunidad, se pueden obtener numerosas ventajas.</p>
+            <ol class="pros__list">
+              <li>
+                <p class="pros__list--number" aria-hidden="true">1_</p>
+                <p>Se puede aprender mucho sobre el lenguaje y cómo aplicarlo a diversos proyectos.</p>
+              </li>
+              <li>
+                <p class="pros__list--number" aria-hidden="true">2_</p>
+                <p>También te ayudará a conocer las últimas tendencias en el desarrollo de Python.</p>
+              </li>
+              <li>
+                <p class="pros__list--number" aria-hidden="true">3_</p>
+                <p>Hacer amigos con gustos similares a los tuyos.</p>
+              </li>
+            </ol>
+          </div>
+          <figure class="pros__photo">
+            <img src="{{ img('ventajas.jpg', size='800x800') }}" alt="Miembros de la comunidad Python Valencia">
+          </figure>
+        </div>
+      </section>
+      <!-- Colabora -->
+      <section class="collaborate scroll-to">
+        <span id="colabora" class="scroll-to__element" aria-hidden="true"></span>
+        <div class="container">
+          <h2 class="text--title--m text--align-center">Colabora</h2>
+          <p class="collaborate__intro text--align-center">Las comunidades se forman por las personas que las integran. Si quieres aportar, puedes hacerlo de muchas formas pythonistas. Aquí tienes algunas ideas.</p>
+          <ul class="collaborate__list">
+            <li class="collaborate__item">
+              <img src="{{ url_for('static', filename='img/icons/icon-colabora-1.svg') }}" alt="" aria-hidden="true" class="collaborate__item--icon">
+              <h3 class="collaborate__item--title">Charlas</h3>
+              <p>Tenemos un espacio disponible para aquellos que quieran dar charlas. Escríbenos a nuestro <a href="mailto:valencia@es.python.org" class="text--link--main">correo</a> o contacta por cualquiera de nuestros canales. Puedes ver las <a href="https://www.meetup.com/python-valencia-meetup/events/past/" target="_blank" class="text--link--main">charlas anteriores</a> en Meetup.</p>
+            </li>
+            <li class="collaborate__item">
+              <img src="{{ url_for('static', filename='img/icons/icon-colabora-2.svg') }}" alt="" aria-hidden="true" class="collaborate__item--icon">
+              <h3 class="collaborate__item--title">Networking</h3>
+              <p>Los miembros de la comunidad de Python Valencia están al día de próximos eventos y comparten experiencias a través de <a href="http://vlctechhub.slack.com" target="_blank" class="text--link--main">Slack</a> y <a href="https://t.me/python_vlc" target="_blank" class="text--link--main">Telegram</a>. Únete haciendo click en cualquiera de los enlaces anteriores.</p>
+            </li>
+            <li class="collaborate__item">
+              <img src="{{ url_for('static', filename='img/icons/icon-colabora-3.svg') }}" alt="" aria-hidden="true" class="collaborate__item--icon">
+              <h3 class="collaborate__item--title">Talleres</h3>
+              <p>Los miembros de la comunidad de Python Valencia están al día de próximos eventos y comparten experiencias.</p>
+            </li>
+          </ul>
+          <p class="collaborate__action">
+            <a href="mailto:valencia@es.python.org" class="button">Únete a Python Valencia <span aria-hidden="true">⟶</span></a>
+          </p>
+        </div>
+      </section>
+      <!-- Preguntas frecuentes -->
+      <section class="faqs container scroll-to">
+        <span id="preguntas-frecuentes" class="scroll-to__element" aria-hidden="true"></span>
+        <h2 class="text--title--m">Preguntas frecuentes</h2>
+        <div class="faqs__questions">
+          <details class="faqs__item">
+            <summary>
+              ¿Debo pagar una cuota?
+              <span class="faqs__item--icon" aria-hidden="true"></span>
+            </summary>
+            <p>No es necesario, con tu asistencia y ganas de colaborar ya estás aportando mucho.</p>
+          </details>
+          <details class="faqs__item">
+            <summary>
+              ¿Cómo puedo participar?
+              <span class="faqs__item--icon" aria-hidden="true"></span>
+            </summary>
+            <p>Asistiendo a las charlas o proponiendo una ponencia. Estaremos encantados de escucharte, sea de Python u otra tecnología igual de alucinante.</p>
+          </details>
+          <details class="faqs__item">
+            <summary>
+              ¿El proyecto tiene algún costo?
+              <span class="faqs__item--icon" aria-hidden="true"></span>
+            </summary>
+            <p>No, como el buen software.</p>
+          </details>
+          <details class="faqs__item">
+            <summary>
+              ¿Estáis abiertos a nuevos colaboradores?
+              <span class="faqs__item--icon" aria-hidden="true"></span>
+            </summary>
+            <p>Cuantas más manos, más grande serán nuestros logros. Te asignaremos un grupo de trabajo que más se ajuste a tus habilidades.</p>
+          </details>
+          <details class="faqs__item">
+            <summary>
+              ¿Cómo puedo ponerme en contacto?
+              <span class="faqs__item--icon" aria-hidden="true"></span>
+            </summary>
+            <p>En cualquiera de nuestras redes sociales.</p>
+          </details>
+        </div>
+      </section>
+      <!-- Fotos de la comunidad -->
+      <div class="photo-band">
+        <figure class="photo-band__item">
+          <img src="{{ img('charla-2.jpg', size='980x900', smart=True) }}" alt="Charla en un evento de Python Valencia">
+        </figure>
+        <figure class="photo-band__item desktop-view">
+          <img src="{{ img('charla-1.jpg', size='980x900', smart=True) }}" alt="Ponentes durante una charla de Python Valencia">
+        </figure>
+        <figure class="photo-band__item desktop-view">
+          <img src="{{ img('charla-3.jpg', size='980x900', smart=True) }}" alt="Público en una charla de Python Valencia">
+        </figure>
+      </div>
+      <!-- Código de conducta -->
+      <section id="codigo-de-conducta" class="code-of-conduct container--wide">
+        <div class="code-of-conduct__card">
+          <h2 class="text--title--m">Código de conducta</h2>
+          <p>Python Valencia es un grupo de entusiastas de Python dedicado a la organización de eventos de distintos tipos, que busca asegurar que todas las personas que participen en dichos eventos o comunicaciones tengan una experiencia positiva de aprendizaje, colaboración y ocio.</p>
+          <p>La comunidad está formada por miembros con un conjunto diverso de habilidades, personalidades y experiencias. Es a través de estas diferencias que nuestra comunidad experimenta grandes éxitos y un crecimiento continuo.</p>
+          <p>Cuando interactúe con miembros de la comunidad, este Código de conducta le ayudará a dirigir sus interacciones y a mantener a Python como una comunidad positiva, exitosa y en crecimiento. Para ello, se espera que quien participe en la comunidad muestre respeto y cortesía hacia el resto.</p>
+          <div
+            id="conduct-content"
+            class="code-of-conduct__more-content"
+            style="height: 0; overflow: hidden;"
+          >
+            <h3>Nuestra comunidad</h3>
+            <p>Los miembros de la comunidad Python son <strong>abiertos, considerados y respetuosos</strong>. Los comportamientos que refuerzan estos valores contribuyen a un ambiente positivo e incluyen:</p>
+            <ul>
+              <li>
+                <p><strong>Estar abierto.</strong></p>
+                <p>Los miembros de la comunidad están abiertos a la colaboración a fin de hacer crecer nuestra comunidad. Toda ayuda es bienvenida y ninguna idea carece de valor.</p>
+              </li>
+              <li>
+                <p><strong>Centrándose en lo que es mejor para la comunidad.</strong></p>
+                <p>Somos respetuosos de los procesos establecidos en la comunidad y trabajamos dentro de ellos.</p>
+              </li>
+              <li>
+                <p><strong>Reconociendo el tiempo y el esfuerzo.</strong></p>
+                <p>Respetamos los esfuerzos voluntarios que impregnan la comunidad Python. Somos reflexivos al abordar los esfuerzos de los demás, teniendo en cuenta que muchas veces el trabajo se completó simplemente por el bien de la comunidad.</p>
+              </li>
+              <li>
+                <p><strong>Ser respetuoso de los diferentes puntos de vista y experiencias.</strong></p>
+                <p>Somos receptivos a comentarios y críticas constructivas, ya que las experiencias y habilidades de otros miembros contribuyen a todos nuestros esfuerzos.</p>
+              </li>
+              <li>
+                <p><strong>Mostrar empatía hacia otros miembros de la comunidad.</strong></p>
+                <p>Estamos atentos en nuestras comunicaciones, ya sea en persona o en línea, y tenemos tacto al abordar puntos de vista diferentes.</p>
+              </li>
+              <li>
+                <p><strong>Ser considerado.</strong></p>
+                <p>Los miembros de la comunidad son considerados con sus pares: otros usuarios de Python.</p>
+              </li>
+              <li>
+                <p><strong>Ser respetuoso.</strong></p>
+                <p>Respetamos a los demás, sus posiciones, sus habilidades, sus compromisos y sus esfuerzos.</p>
+              </li>
+              <li>
+                <p><strong>Aceptar con gracia las críticas constructivas.</strong></p>
+                <p>Cuando no estamos de acuerdo, somos corteses al plantear nuestros problemas.</p>
+              </li>
+              <li>
+                <p><strong>Utilizar un lenguaje acogedor e inclusivo.</strong></p>
+                <p>Aceptamos a todos los que deseen participar en nuestras actividades, fomentando un ambiente donde cualquiera puede participar y todos pueden marcar la diferencia.</p>
+              </li>
+            </ul>
+            <h3>Alcance</h3>
+            <p>Este código de conducta es aplicable a todas las personas que participen en espacios de la comunidad de Python Valencia, ya sean en línea o presenciales. También se aplica a espacios públicos donde una persona esté en representación de la comunidad. Ejemplos de esto último incluyen el uso de la cuenta oficial de correo electrónico, publicaciones a través de las redes sociales oficiales, o presentaciones con personas designadas en eventos en línea o no.</p>
+            <h3>Nuestros estándares</h3>
+            <p>Todo miembro de nuestra comunidad tiene derecho a que se respete su identidad. La comunidad Python Valencia se dedica a brindar una experiencia positiva para todos, independientemente de su edad, identidad y expresión de género, orientación sexual, discapacidad, apariencia física, tamaño corporal, origen étnico, nacionalidad, raza o religión (o falta de ella), educación o Estatus socioeconómico.</p>
+            <h3>Comportamiento inapropiado</h3>
+            <p>Ejemplos de comportamiento inaceptable por parte de los participantes incluyen:</p>
+            <ul>
+              <li>El uso de lenguaje o imágenes sexualizadas, y aproximaciones o atenciones sexuales de cualquier tipo</li>
+              <li>Comentarios despectivos (<em>trolling</em>), insultantes o derogatorios, y ataques personales o políticos</li>
+              <li>Bromas racistas, sexistas o excluyentes</li>
+              <li>El acoso en público o privado</li>
+              <li>Publicar información privada de otras personas, tales como direcciones físicas o de correo electrónico, sin su permiso explícito</li>
+              <li>Otras conductas que puedan ser razonablemente consideradas como inapropiadas en un entorno profesional</li>
+            </ul>
+            <p>Por acoso se entiende comentarios ofensivos relacionados con género, orientación sexual, discapacidad, apariencia física, tamaño corporal, etnia o religión, pornografía en espacios públicos, intimidación deliberada, acecho, persecución, acoso por fotografías o grabaciones, constante interrupción de charlas u otros eventos, contacto físico inapropiado y atención sexual no deseada.</p>
+            <p>Se espera que los miembros de la comunidad a los que se les pide que pongan fin a cualquier comportamiento inapropiado cumplan de inmediato.</p>
+            <h3>Cumplimiento</h3>
+            <p>La administración de la comunidad es responsable de aclarar y hacer cumplir este código de conducta; en caso de que se determine un comportamiento inadecuado, tomará las acciones que considere oportunas. Éstas van desde exigir el cese del comportamiento, hasta la expulsión de una persona de un evento o de la comunidad, sin derecho a reembolso/compensación de cualquier aportación. La administración de la comunidad tendrá el derecho y la responsabilidad de eliminar, editar o rechazar mensajes, comentarios, <em>commits</em>, código, ediciones de páginas de wiki, tickets y otras contribuciones que no se alineen con este código de conducta, y comunicará las razones para sus decisiones de moderación cuando sea apropiado.</p>
+            <h3>Información del contacto</h3>
+            <p>Si cree que alguien está violando el código de conducta o tiene alguna otra inquietud, comuníquese de inmediato enviando un correo electrónico a <a
+              href="mailto:valencia@es.python.org"
+              class="text--link--main"
+            >valencia@es.python.org</a> o acuda a cualquier miembro organizador durante el transcurso de nuestros eventos.</p>
+            <p>Todas las personas organizadoras de la comunidad están obligadas a respetar la privacidad y la seguridad de quienes denuncien incidentes.</p>
+            <h3>Atribuciones</h3>
+            <p>Este código de conducta extiende del código de conducta de la <a
+              href="https://www.python.org/psf/conduct/"
+              target="_blank"
+              class="text--link--main"
+            >Python Software Foundation</a> y del de la asociación de <a
+              href="https://github.com/python-spain/documentacion/blob/master/codigo-conducta.rst"
+              target="_blank"
+              class="text--link--main"
+            >Python España</a>.</p>
+          </div>
+          <button
+            id="conduct-read-more"
+            type="button"
+            class="code-of-conduct__more-button"
+          >Leer más</button>
+        </div>
+      </section>
+      <!-- Contacta -->
+      <section class="contact scroll-to">
+        <span id="contacto" class="scroll-to__element" aria-hidden="true"></span>
+        <h2 class="visually-hidden">Contacta con nosotros</h2>
+        <div class="contact__marquee" aria-hidden="true">
+          <p class="contact__marquee--text">Contacta con nosotros.&nbsp;Contacta con nosotros.&nbsp;Contacta con nosotros.&nbsp;Contacta con nosotros.&nbsp;</p>
+          <p class="contact__marquee--text" aria-hidden="true">Contacta con nosotros.&nbsp;Contacta con nosotros.&nbsp;Contacta con nosotros.&nbsp;Contacta con nosotros.&nbsp;</p>
+        </div>
+        <nav class="contact__social">
+          <ul class="contact__social--list container">
+            <li>
+              <a href="https://t.me/python_vlc" target="_blank" class="contact__social--link">
+                <img src="{{ url_for('static', filename='img/icons/icon-telegram.svg') }}" alt="">
+                <span>Telegram <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/python_vlc" target="_blank" class="contact__social--link">
+                <img src="{{ url_for('static', filename='img/icons/icon-twitter.svg') }}" alt="">
+                <span>Twitter <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://masto.es/@python_vlc" target="_blank" rel="me" class="contact__social--link">
+                <img src="{{ url_for('static', filename='img/icons/icon-mastodon.svg') }}" alt="">
+                <span>Mastodon <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="http://vlctechhub.slack.com" target="_blank" class="contact__social--link">
+                <img src="{{ url_for('static', filename='img/icons/icon-slack.svg') }}" alt="">
+                <span>Slack <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/python-valencia" target="_blank" class="contact__social--link">
+                <img src="{{ url_for('static', filename='img/icons/icon-linkedin.svg') }}" alt="">
+                <span>LinkedIn <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <p class="contact__email">
+          <a href="mailto:valencia@es.python.org">valencia@es.python.org</a>
+        </p>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <figure class="footer__logo">
+          <img src="{{ url_for('static', filename='img/logo-python-valencia.webp') }}" alt="Logo de Python Valencia">
+          <figcaption>Python Valencia</figcaption>
+        </figure>
+        <div class="footer__bottom">
+          <p>© {{ year }} Todos los derechos reservados</p>
+          <p>
+            Desarrollado por
+            <a href="https://python-valencia.es" target="_blank">Python Valencia</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

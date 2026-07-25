@@ -1,0 +1,43 @@
+.text--body--l
+  font-size: 1.125rem
+  line-height: 1.3
+
+.text--align-center
+  text-align: center
+
+.text--orange
+  color: $color--orange
+
+.text--link--main
+  color: inherit
+  text-decoration: underline
+  transition: $transition--main
+
+  &:hover
+    color: $color--orange
+
+.text--link--highlight
+  position: relative
+  display: inline-flex
+  align-items: self-end
+  transition: $transition--main
+
+  &::before
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    display: block
+    height: 1px
+    background-color: currentColor
+    z-index: 0
+    transition: $transition--main
+
+  &:not(.active)::before
+    width: 0
+
+  &:hover::before
+    width: 100%
+
+  &.active::before
+    width: 100%

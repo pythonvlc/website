@@ -1,0 +1,418 @@
+// HERO //
+.hero
+  position: relative
+  display: flex
+  align-items: flex-end
+  overflow: hidden
+
+  &__photo
+    position: absolute
+    inset: 0
+    height: 100%
+    object-fit: cover
+    z-index: 0
+
+  &::after
+    content: ""
+    position: absolute
+    inset: 0
+    background: linear-gradient(180deg, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .55) 100%)
+    z-index: 1
+
+  &__heading
+    position: relative
+    width: 100%
+    z-index: 2
+
+  &__logo
+    width: 5.125rem
+    margin-bottom: $gap--s
+
+  &__title
+    color: $color--white
+    font-weight: 700
+    line-height: 1.27
+
+// PRÓXIMO EVENTO //
+.event
+
+  &__box
+    display: grid
+    background-color: $color--orange
+    color: $color--black
+
+  &__title
+    font-size: 1.125rem
+    margin-top: $gap--s
+    max-width: 46rem
+
+    a
+      color: inherit
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+  &__chips
+    display: flex
+    flex-wrap: wrap
+    gap: $gap--xs
+    margin-top: $gap--s
+
+  &__chip
+    display: inline-block
+    padding: $gap--xs $gap--s
+    background-color: $color--white
+    font-weight: 500
+    font-size: .9375rem
+
+  &__photo
+    position: relative
+    overflow: hidden
+
+    a
+      display: block
+      height: 100%
+
+    img
+      height: 100%
+      object-fit: cover
+
+  &__label
+    position: absolute
+    top: 0
+    right: 0
+    margin: 0
+    padding: $gap--xs $gap--s
+    background-color: $color--black
+    color: $color--white
+    font-weight: 500
+
+// QUIÉNES SOMOS //
+.community
+
+  &__photo img
+    aspect-ratio: 1
+    object-fit: cover
+
+  &__info h3
+    font-weight: 500
+
+  &__info h2
+    margin:
+      top: $gap--xs
+      bottom: $gap--s
+
+// SOCIOS //
+.members
+
+  &__intro--text
+    font-size: .9375rem
+    margin-top: $gap--m
+
+  &__card
+    box-sizing: border-box
+    display: flex
+    align-self: start
+    align-items: center
+    justify-content: space-between
+    gap: $gap--s
+    background-color: $color--black
+    color: $color--white
+
+    &--name
+      color: $color--orange
+      font-size: 1rem
+      font-weight: 700
+
+  &__join
+
+    &--card
+      box-sizing: border-box
+      display: grid
+      place-items: center
+      gap: $gap--m
+      min-height: 13.625rem
+      padding: $gap--m $gap--s
+      align-content: center
+      border: $border--main $color--black
+      background-color: $color--white
+      transition: $transition--main
+
+      &:hover
+        border-color: $color--orange
+        background-color: rgba($color--orange, .08)
+
+        .members__join--question
+          color: $color--orange
+
+        .button
+          background-color: $color--orange
+          border-color: $color--orange
+          color: $color--white
+
+    &--question
+      font-weight: 700
+      transition: $transition--main
+
+    &--note
+      font-size: .875rem
+      margin-top: $gap--s
+
+// VENTAJAS //
+.pros
+  background-color: $color--beige
+
+  &__info h2
+    max-width: 38rem
+
+  &__info > p
+    margin-top: $gap--m
+
+  &__photo img
+    aspect-ratio: 1
+    object-fit: cover
+
+  &__list
+    display: grid
+    margin-top: $gap--l
+
+    &--number
+      font-weight: 700
+      line-height: 1.15
+
+    li > p:last-child
+      font-size: .875rem
+      margin-top: $gap--xs
+
+// COLABORA //
+.collaborate
+  background-color: $color--blue
+
+  &__intro
+    max-width: 43rem
+    margin:
+      top: $gap--m
+      left: auto
+      right: auto
+
+  &__list
+    display: grid
+    margin-top: $gap--l
+
+  &__item
+
+    &--icon
+      width: 2.75rem
+      height: 2.75rem
+
+    &--title
+      font-size: 1rem
+      font-weight: 700
+      margin:
+        top: $gap--s
+        bottom: $gap--s
+
+    p
+      font-size: .875rem
+
+    .text--link--main:hover
+      color: $color--white
+
+  &__action
+    text-align: center
+    margin-top: $gap--l
+
+// PREGUNTAS FRECUENTES //
+.faqs
+
+  &__item
+    border: $border--main $color--black
+
+    & + &
+      margin-top: -1px
+
+    summary
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: $gap--s
+      font-weight: 500
+      cursor: pointer
+
+    p
+      padding-top: 0
+
+    &--icon
+      position: relative
+      flex-shrink: 0
+      width: 1.125rem
+      height: 1.125rem
+      transition: $transition--main
+
+      &::before,
+      &::after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 0
+        width: 100%
+        height: 1.5px
+        background-color: $color--black
+
+      &::after
+        transform: rotate(90deg)
+
+    &[open] &--icon
+      transform: rotate(45deg)
+
+// FOTOS DE LA COMUNIDAD //
+.photo-band
+  display: flex
+  overflow: hidden
+
+  &__item
+    flex: 1
+    min-width: 0
+
+    img
+      height: 100%
+      object-fit: cover
+
+// CÓDIGO DE CONDUCTA //
+.code-of-conduct
+
+  &__card
+    background-color: $color--beige
+
+    h2
+      margin-bottom: $gap--m
+
+    h3
+      font-size: 1rem
+      font-weight: 700
+      margin-top: $gap--s
+
+    p
+      margin: 0
+
+    ul
+      list-style: disc
+      padding-left: $gap--m
+
+  &__more-content
+    transition: height $transition--slow
+
+  &__more-button
+    padding: 0
+    margin-top: $gap--m
+    background: none
+    border: none
+    font-family: inherit
+    font-size: .875rem
+    font-weight: 700
+    color: $color--ink
+    cursor: pointer
+    transition: $transition--main
+
+    &:hover
+      color: $color--orange
+      text-decoration: underline
+
+// CONTACTA //
+.contact
+  background-color: $color--blue
+  color: $color--black
+
+  &__marquee
+    display: flex
+    overflow: hidden
+
+    &--text
+      flex-shrink: 0
+      margin: 0
+      white-space: nowrap
+      font-weight: 400
+      color: $color--black
+      animation: animation-contact 30s linear infinite
+
+  &__social
+    border:
+      top: $border--main $color--black
+      bottom: $border--main $color--black
+
+    &--list
+      display: flex
+
+      li
+        flex: 1
+        display: flex
+
+    &--link
+      flex: 1
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: $gap--xs
+      color: $color--black
+      text-decoration: none
+      font-weight: 500
+      font-size: 1.125rem
+      transition: $transition--main
+
+      img
+        width: 1.3125rem
+        height: 1.3125rem
+        object-fit: contain
+
+      &:hover
+        background-color: rgba($color--white, .25)
+
+  &__email
+    margin: 0
+    padding: $gap--l 0
+    text-align: center
+    font-size: 1.375rem
+    font-weight: 500
+
+    a
+      color: $color--black
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+// FOOTER //
+.footer
+  background-color: $color--black-footer
+  color: $color--blue-light
+
+  &__logo
+    padding-bottom: $gap--m
+    border-bottom: $border--main $color--blue-light
+
+    img
+      width: 3rem
+
+    figcaption
+      margin-top: $gap--xs
+      font-size: 1.125rem
+
+  &__bottom
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: $gap--xxs
+    padding-top: $gap--s
+    font-size: .6875rem
+
+    p
+      margin: 0
+
+    a
+      color: inherit
+      text-decoration: underline
+      transition: $transition--main
+
+      &:hover
+        color: $color--white

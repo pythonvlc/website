@@ -1,0 +1,127 @@
+// HERO //
+.hero
+  height: 48.25rem
+
+  &__heading
+    padding-bottom: 6.5rem
+
+  &__title
+    font-size: 5.25rem
+
+// PRÓXIMO EVENTO //
+.event
+  margin-top: 6rem
+
+  &__box
+    grid-template-columns: minmax(0, 1fr) minmax(0, 25.5rem)
+    min-height: 22.75rem
+
+  &__info
+    padding: $gap--l
+
+// QUIÉNES SOMOS //
+.community
+  display: grid
+  grid-template-columns: minmax(0, 24rem) minmax(0, 1fr)
+  gap: $gap--l
+  align-items: center
+  margin-top: $gap--xxl
+
+// SOCIOS //
+.members
+  display: grid
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr)
+  gap: $gap--l
+  margin-top: $gap--xxl
+
+  &__list
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 2.25rem
+
+  &__card
+    min-height: 5.5rem
+    padding: $gap--s $gap--m
+
+// VENTAJAS //
+.pros
+  margin-top: $gap--xxl
+  padding: 5.5rem 0
+
+  &__all
+    display: grid
+    grid-template-columns: minmax(0, 1fr) minmax(0, 24rem)
+    gap: $gap--xl
+    align-items: start
+
+  &__list
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+    gap: $gap--m
+
+    &--number
+      font-size: 5rem
+
+// COLABORA //
+.collaborate
+  padding: 5.5rem 0 6rem
+
+  &__list
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+    gap: 4.5rem
+
+  &__action
+    margin-top: $gap--l
+
+// PREGUNTAS FRECUENTES //
+.faqs
+  display: grid
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr)
+  gap: $gap--l
+  margin-top: $gap--xxl
+
+  &__item
+
+    summary
+      font-size: 1.375rem
+      padding: 2.125rem $gap--m
+
+    p
+      padding: 0 $gap--m $gap--m
+      max-width: 40rem
+
+// FOTOS DE LA COMUNIDAD //
+.photo-band
+  height: 29rem
+  margin-top: $gap--xxl
+
+// CÓDIGO DE CONDUCTA //
+.code-of-conduct
+  margin:
+    top: 6rem
+    bottom: 6rem
+
+  &__card
+    padding: $gap--l
+
+// CONTACTA //
+.contact
+  padding-top: $gap--l
+
+  &__marquee
+    margin-bottom: $gap--l
+
+    &--text
+      font-size: 4.5rem
+
+  &__social--link
+    padding: 1.75rem $gap--s
+
+  .contact__social--list li + li
+    border-left: $border--main $color--black
+
+// FOOTER //
+.footer
+  padding: $gap--l 0 $gap--s
+
+  &__logo
+    padding-top: $gap--m

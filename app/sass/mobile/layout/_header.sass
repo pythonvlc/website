@@ -1,0 +1,93 @@
+.header
+  $button-size: 2rem
+
+  &__bar
+    padding:
+      top: $gap--s
+      bottom: $gap--s
+
+  &__button
+    position: relative
+    display: flex
+    width: $button-size
+    height: $button-size
+    background-color: unset
+    border: unset
+    padding: $gap--xxxs 0
+    z-index: 10
+
+    & > span
+      position: absolute
+      display: block
+      height: 2px
+      background-color: $color--white
+      transition: $transition--slow
+
+      &:not(&:last-child)
+        width: $button-size
+        align-self: center
+
+      &:first-child
+        transform: translateY(calc(-#{$button-size} / 2 + #{$gap--xxxs}))
+
+      &:last-child
+        align-self: self-end
+        width: calc(#{$button-size} / 2)
+        opacity: 1
+
+    &.open > span
+      background-color: $color--black
+
+      &:first-child
+        transform: translateY(0) rotate(45deg)
+
+      &:nth-child(2)
+        transform: rotate(-45deg)
+
+      &:last-child
+        width: 0
+        opacity: 0
+
+  &__nav
+    box-sizing: border-box
+    position: fixed
+    inset: 0
+    height: 100vh
+    width: 100%
+    padding: calc(#{$button-size} + #{$gap--m} * 2) var(--gap--m) $gap--l
+    background-color: rgba($color--white, .92)
+    backdrop-filter: blur(10px)
+    transform: translateX(-100%)
+    transition: $transition--slow
+
+    &.open
+      transform: translateX(0)
+
+    &--logo
+      box-sizing: border-box
+      position: absolute
+      right: 0
+      top: $gap--s
+      display: flex
+      height: $button-size
+      width: 50%
+      padding-right: var(--gap--m)
+
+      & > img
+        object:
+          fit: contain
+          position: right
+
+    &--list
+      display: grid
+      row-gap: $gap--s
+      font-size: 1.125rem
+      color: $color--black
+
+      & > li:last-child
+        margin-top: $gap--xxs
+
+  &.main
+
+    .header__button > span
+      background-color: $color--black
