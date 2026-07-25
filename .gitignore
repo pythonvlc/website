@@ -9,3 +9,6 @@ node_modules/
 .DS_Store
 .playwright-mcp/
 .agent-shell/
+
+# El patron global "Icon?" de macOS no debe excluir nuestras carpetas de iconos
+!**/icons/
